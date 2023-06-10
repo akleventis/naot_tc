@@ -1,6 +1,5 @@
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
-import ConferenceInfo from "../components/ConferenceInfo";
 import Container from "react-bootstrap/Container";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -43,7 +42,6 @@ function Dropdown() {
       <Accordion.Item eventKey="0">
         <Header />
         <Accordion.Body className="m-0">
-          {/* <ConferenceInfo /> */}
           <Flyer />
         </Accordion.Body>
       </Accordion.Item>
