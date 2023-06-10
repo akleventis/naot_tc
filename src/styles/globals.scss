@@ -1,0 +1,40 @@
+$theme-colors: (
+  'primary': #093ea8,
+  'secondary': #3bd7ec,
+  'success': #22e11c,
+  'info': #d9ff50,
+  'warning': #ffbe0b,
+  'danger': #ff0000,
+  'light': #c0ccda,
+  'dark': #000103,
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: blue;
+}
+
+.accordion-button {
+  justify-content: space-evenly;
+}
+.accordion-button::after {
+  margin-left: 0;
+  float: right;
+}
