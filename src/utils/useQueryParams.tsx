@@ -4,17 +4,20 @@ import { useState, useEffect } from "react";
 export function useQueryParams() {
   const router = useRouter();
   const { query } = router;
+
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    handleQueryParams();
-  }, [query.success]);
+    if (query.success !== undefined ) { // prevent re-render
+      handleQueryParams();
+    }
+  }, [query.success, query.event]);
 
   const handleQueryParams = () => {
     if (query.success === "true") {
       setShowModal(true);
-      clearQueryParams();
     }
+    clearQueryParams();
   };
 
   const clearQueryParams = () => {
