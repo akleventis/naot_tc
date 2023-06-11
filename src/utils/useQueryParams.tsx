@@ -6,23 +6,23 @@ export function useQueryParams() {
   const { query } = router;
 
   const [showModal, setShowModal] = useState(false);
+  const [eventKey, setEventKey] = useState("")
 
   useEffect(() => {
-    if (query.success !== undefined ) { // prevent re-render
-      handleQueryParams();
+    // success modal
+    query.success === "true" && setShowModal(true)
+
+    // event focus
+    if (typeof query.event === 'string') {
+      setEventKey(query.event)
+      clearQueryParams()
+      
     }
   }, [query.success, query.event]);
-
-  const handleQueryParams = () => {
-    if (query.success === "true") {
-      setShowModal(true);
-    }
-    clearQueryParams();
-  };
 
   const clearQueryParams = () => {
     router.replace(router.pathname, router.pathname, { shallow: true });
   };
 
-  return { showModal, setShowModal, clearQueryParams };
+  return { showModal, setShowModal, eventKey, setEventKey, clearQueryParams };
 }

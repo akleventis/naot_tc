@@ -14,7 +14,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 const stripeSrc: string = 'https://js.stripe.com/v3/buy-button.js'
 
 export default function Home() {
-  const { showModal, setShowModal, clearQueryParams } = useQueryParams();
+  const { showModal, setShowModal, eventKey, setEventKey, clearQueryParams } = useQueryParams();
 
   const handleClose = () => {
     setShowModal(false);
@@ -31,7 +31,7 @@ export default function Home() {
         <Navbar />
         <Container style={{ maxWidth: '1000px' }}>
           <SuccessModal show={showModal} handleClose={handleClose}/>
-          <Dropdown />
+          <Dropdown eventKey={eventKey} setEventKey={setEventKey}/>
         </Container>
       </main>
     </>

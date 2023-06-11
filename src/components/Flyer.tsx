@@ -168,52 +168,56 @@ export default function Flyer(){
             <div className={`${styles.flyer_container} m-0 p-0 position-relative`}>
                 <Banner text={bannerText} />
 
+                {/* learning objectives */}
                 <div className={styles.mobileWrap}>
                     <ListInfoLG title={learningObjectivesTitle} listItems={learningObjectives}/>
                 </div>
 
+                {/* casting image */}
                 {/* float right */}
-                <div className={styles.abs_0}>
+                <div className={`${styles.abs_0} ${styles.mobileWrap}`}>
                     <img src={flyerImageSrc} alt='flyer-img' width='100%'/>
                 </div>
 
                 {/* float right */}
                 <div className={styles.mobileWrap}>
-                    <div className={styles.abs_1}>
+                    <div className={`${styles.abs_1}`}>
                         <ListInfoSM title={topicsTitle} listItems={topicsInfo}/>
                         <ListInfoSM title={certsTitle} listItems={certsInfo}/>
                     </div>
                 </div>
 
+                {/* faculty  */}
                 <div className={styles.mobileWrap}>
                     <TextInfo title={facultyTitle} text={facultyInfo} />
                 </div>
 
+                {/* hotel  */}
                 <div className={styles.mobileWrap}>
                     <TextInfo title={hotelTitle} text={hotelText} />
                 </div>
 
-                <div className={styles.mobileWrap}>
+                {/* register  */}
+                <div className={`${styles.mobileWrap} ${styles.mobileWrap}`} id="register">
                     <Register endDateText={registrationEnd} buyButtonID={buyButtonID} buyButtonKey={buyButtonKey}/>
                 </div>
 
+                {/* cancel  */}
                 <div className={styles.mobileWrap}>
                     <TextInfo title={cancelTitle} text={cancelText}/>
                 </div>
 
                 {/* float right */}
-                <div className={styles.mobileWrap}>
-                    <div className={styles.abs_2}>
-                        <Sponsor title={sponsorTitle} imageSRC={sponsorImageSrc}/>
-                    </div>
+                {/* sponsor  */}
+                <div className={`${styles.abs_2} ${styles.mobileWrap}`}>
+                    <Sponsor title={sponsorTitle} imageSRC={sponsorImageSrc}/>
                 </div>
 
 
                 {/* float right */}
-                <div className={styles.mobileWrap}>
-                    <div className={styles.abs_3}>
-                        <Footer logoSrc={logoSrc} cityState={cityState} date={date} time={time} addressTitle={addressTitle} addressStreet={addressStreet} cityStateZip={cityStateZip} phoneNumber={phoneNumber}/>
-                    </div>
+                {/* footer  */}
+                <div className={`${styles.abs_3} ${styles.mobileWrap}`}>
+                    <Footer logoSrc={logoSrc} cityState={cityState} date={date} time={time} addressTitle={addressTitle} addressStreet={addressStreet} cityStateZip={cityStateZip} phoneNumber={phoneNumber}/>
                 </div>
             </div>
         </>

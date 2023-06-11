@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
@@ -23,9 +22,12 @@ function HeaderCol({icon, title}: {icon: string, title: string}){
   )
 }
 
-function Header() {
+function Header({eventKey, setEventKey}: {eventKey: string; setEventKey: any}) {
+  const handleToggle = () => {
+    eventKey === "" ? setEventKey(eventKey) : setEventKey("")
+  }
   return (
-    <Accordion.Header >
+    <Accordion.Header onClick={()=> setEventKey(handleToggle)}>
     <div>
       <h5 className="m-0">{eventTitle}</h5>
       <Container className="d-flex">
@@ -51,18 +53,18 @@ function Body() {
 }
 
 // eventually pass all data through to this component
-function Dropdown() {
+function Dropdown({eventKey, setEventKey}: {eventKey: string ;setEventKey :any}) {
   return (
-    <Accordion style={{borderBottom: "0"}}>
+    <Accordion activeKey={eventKey} style={{borderBottom: "0"}}>
       <Accordion.Item eventKey="0">
-        <Header />
+        <Header eventKey="0" setEventKey={setEventKey}/>
         <Body />
       </Accordion.Item>
 
-      {/* <Accordion.Item eventKey="1">
-        <Header />
+      <Accordion.Item eventKey="1" >
+        <Header eventKey="1" setEventKey={setEventKey}/>
         <Body />
-      </Accordion.Item> */}
+      </Accordion.Item>
 
     </Accordion>
   );

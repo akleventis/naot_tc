@@ -23,6 +23,13 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  background-image: url('../../public/bg_white.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 a {
   color: inherit;
   text-decoration: none;
