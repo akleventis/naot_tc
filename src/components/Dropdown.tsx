@@ -46,7 +46,7 @@ function Header({eventKey, setEventKey}: {eventKey: string; setEventKey: any}) {
 
 function Body() {
   return (
-    <Accordion.Body className="m-0 p-0">
+    <Accordion.Body className="m-0 p-0" style={{overflow: "auto"}}>
       <Flyer />
     </Accordion.Body>
   )
@@ -55,8 +55,9 @@ function Body() {
 // eventually pass all data through to this component
 function Dropdown({eventKey, setEventKey}: {eventKey: string ;setEventKey :any}) {
   return (
-    <Accordion activeKey={eventKey} style={{borderBottom: "0"}}>
-      <Accordion.Item eventKey="0">
+    <Accordion activeKey={eventKey} style={{borderBottom: "0"}} >
+
+      <Accordion.Item eventKey="0" >
         <Header eventKey="0" setEventKey={setEventKey}/>
         <Body />
       </Accordion.Item>
@@ -66,6 +67,10 @@ function Dropdown({eventKey, setEventKey}: {eventKey: string ;setEventKey :any})
         <Body />
       </Accordion.Item>
 
+      <Accordion.Item eventKey="2" >
+        <Header eventKey="2" setEventKey={setEventKey}/>
+        <Body />
+      </Accordion.Item>
     </Accordion>
   );
 }

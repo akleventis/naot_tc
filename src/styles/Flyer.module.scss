@@ -7,14 +7,22 @@ $transBlue: #2774afa9;
 $primaryGold: #fec72b;
 $transGold: #fec62b6f;
 
-// .flyer_container {
-//   overflow: hidden;
-// }
-
 .title {
   color: $primaryBlue;
   padding-bottom: 8px;
   border-bottom: 3px solid $primaryGold;
+}
+
+
+.flyer_container {
+  height: 1175px;
+}
+
+.Register_container {
+  margin-left: $sideMargin;
+  max-width: $maxWidthLg;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 .Banner_container {
@@ -24,7 +32,7 @@ $transGold: #fec62b6f;
   padding: 1.5em;
   max-width: 650px;
   border-bottom-right-radius: 10px;
-  margin-bottom: 1em;
+  // margin-bottom: 1em;
 }
 
 .ListInfoLG_container {
@@ -53,12 +61,6 @@ $transGold: #fec62b6f;
 .Sponsor_container {
   margin-left: $sideMargin;
   width: $maxWidthSm;
-}
-
-.Register_container {
-  margin-left: $sideMargin;
-  max-width: $maxWidthLg;
-  text-align: center;
 }
 
 .Footer_container {

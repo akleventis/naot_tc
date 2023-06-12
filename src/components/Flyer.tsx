@@ -1,5 +1,4 @@
 import styles from '@/styles/Flyer.module.scss';
-import { Container } from 'react-bootstrap';
 import BuyButtonComponent from './BuyButton';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -168,6 +167,11 @@ export default function Flyer(){
             <div className={`${styles.flyer_container} m-0 p-0 position-relative`}>
                 <Banner text={bannerText} />
 
+                {/* register  */}
+                <div className={`${styles.mobileWrap} ${styles.mobileWrap}`} id="register">
+                    <Register endDateText={registrationEnd} buyButtonID={buyButtonID} buyButtonKey={buyButtonKey}/>
+                </div>
+                
                 {/* learning objectives */}
                 <div className={styles.mobileWrap}>
                     <ListInfoLG title={learningObjectivesTitle} listItems={learningObjectives}/>
@@ -197,10 +201,6 @@ export default function Flyer(){
                     <TextInfo title={hotelTitle} text={hotelText} />
                 </div>
 
-                {/* register  */}
-                <div className={`${styles.mobileWrap} ${styles.mobileWrap}`} id="register">
-                    <Register endDateText={registrationEnd} buyButtonID={buyButtonID} buyButtonKey={buyButtonKey}/>
-                </div>
 
                 {/* cancel  */}
                 <div className={styles.mobileWrap}>
