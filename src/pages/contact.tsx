@@ -1,12 +1,14 @@
+import { useState, useRef } from "react";
+import { Container, Typography, TextField, Button } from "@mui/material";
+import { styled } from "@mui/system";
 import emailjs from "@emailjs/browser";
-import React, { useRef } from "react";
-import styles from "@/styles/Contact.module.scss";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
+
+const Section = styled("div")({
+  marginBottom: "1.5rem",
+});
 
 function Contact() {
-  const formRef = useRef<HTMLFormElement>(null);
+    const formRef = useRef<HTMLFormElement>(null);
 
   const [public_key, service_id, template_id] = [
     process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY,
@@ -32,67 +34,27 @@ function Contact() {
 
   return (
     <main>
-      <Container
-        style={{ maxWidth: "1000px" }}
-        className="d-flex justify-content-center"
-      >
-        <div className="d-flex flex-column text-align-center">
-          <div className={styles.section}>
-            <h4>Contact Us</h4>
-            <p>
-              {" "}
-              Make sure to include your email address, name, and message body.
-              We'll reach back as soon as possible
-            </p>
-          </div>
+      <Container style={{ maxWidth: "1000px" }} sx={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ display: "flex", flexDirection: "column", textAlign: "center" }}>
+          <Section>
+            <Typography variant="h4">Contact Us</Typography>
+            <Typography>
+              Make sure to include your email address, name, and message body. We'll reach back as soon as possible.
+            </Typography>
+          </Section>
 
-          <form
-            id="email-form"
-            className={styles.section}
-            onSubmit={handleSendEmail}
-            ref={formRef}
-          >
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control
-                type="email"
-                placeholder="Email Address"
-                required
-                name="from_email"
-                autoComplete="off"
-                autoCorrect="off"
-                className="feedback-input"
-              />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
+          <form id="email-form" onSubmit={handleSendEmail} ref={formRef}>
+          <Container sx={{ display: "flex", justifyContent: "center", flexDirection: 'column', width: '450px'}}>
+            <TextField type="email" label="Email Address" required name="from_email" autoComplete="off" autoCorrect="off" sx={{marginBottom: '1.5em'}}/>
 
-            <Form.Group className="mb-3" controlId="formEmailSubject">
-              <Form.Control
-                type="text"
-                placeholder="Full Name"
-                required
-                name="from_name"
-                autoComplete="off"
-                autoCorrect="off"
-                className="feedback-input"
-              />
-            </Form.Group>
+            <TextField type="text" label="Full Name" required name="from_name" autoComplete="off" autoCorrect="off" sx={{marginBottom: '1.5em'}}/>
 
-            <Form.Group className="mb-3" controlId="formEmailBody">
-              <Form.Control
-                as="textarea"
-                rows={4}
-                placeholder="Message"
-                required
-                name="message"
-                className="feedback-input"
-              />
-            </Form.Group>
+            <TextField multiline rows={5} label="Message" required name="message" sx={{marginBottom: '1.5em'}}/>
 
-            <Button variant="primary" type="submit">
+            <Button variant="contained" type="submit">
               Submit
             </Button>
+          </Container>
           </form>
         </div>
       </Container>
