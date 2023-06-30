@@ -1,11 +1,10 @@
 import * as React from "react";
 import { useRouter } from "next/router";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { CardActionArea, createTheme, ThemeProvider } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
