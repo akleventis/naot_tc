@@ -1,11 +1,15 @@
+import data from '@/data/data.json'
+import { WorkshopData } from "@/utils/interfaces";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
+import BuyButton from "@/components/BuyButton";
 import Paper from "@mui/material/Paper";
 import Container from "@mui/material/Container";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import Typography from "@mui/material/Typography";
+import Typography, { TypographyProps } from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import BuyButton from "@/components/BuyButton";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 const buyButtonID = "buy_btn_1NH9ViD6jiafmpE3gsUN6AHN";
 const buyButtonKey =
@@ -52,66 +56,48 @@ function Header() {
     </>
   );
 }
-function ParagraphBlock({
-  title,
-  text,
-  size,
-}: {
-  title: string;
-  text: string;
-  size?: string;
-}) {
-  const mediumBlock = (
-    <>
-      <Typography variant="h6">{title}</Typography>
-      <Typography variant="body1">{text}</Typography>
-    </>
-  );
-  const smallBlock = (
-    <>
-      <Typography variant="subtitle1">{title}</Typography>
-      <Typography variant="body2" color="text.secondary">
-        {text}
-      </Typography>
-    </>
-  );
 
-  return <Container>{size === undefined ? mediumBlock : smallBlock}</Container>;
+function ParagraphBlock({title, text, variant }: { title: string; text: string; variant: TypographyProps['variant']; }) {
+  return (
+    <Container>
+      <Typography variant="h6">{title}</Typography>
+      <Typography variant={variant}>{text}</Typography>
+    </Container>
+  );
 }
 
 function StandardList() {
+  let list = [
+    "Demonstrate proper casting technique for application and removal of upper and lower extremity casts and splints achieve through lecture, demonstration, and hands-on practice.",
+    "Recognize indications for various types of cast/splint treatment.",
+    "Identify best practices for cast application and removal.",
+    "Identify casting/splinting complications and their possible solutions.",
+    "Learn proper patient care protocols."
+  ];
   return (
     <Container>
       <Typography variant="h6">OVERALL LEARNING OBJECTIVES</Typography>
-      <List>
-        <ListItem>
-          Demonstrate proper casting technique for application and removal of
-          upper and lower extremity casts and splints (achieve through lecture,
-          demonstration, and hands-on practice).
-        </ListItem>
-        <ListItem>
-          Recognize indications for various types of cast/splint treatment.
-        </ListItem>
-        <ListItem>
-          Identify best practices for cast application and removal.
-        </ListItem>
-        <ListItem>
-          Identify casting/splinting complications and their possible solutions.
-        </ListItem>
-        <ListItem>Learn proper patient care protocols.</ListItem>
-      </List>
+      <ul style={{paddingLeft: "15px"}}>
+        {list.map((item, i) => {
+          return (
+            <li key={i}>{item}</li>
+          )
+        })}
+        </ul>
     </Container>
   );
 }
 function SplitList({
   title,
   listItems,
+  chunkSize,
 }: {
   title: string;
   listItems: string[];
+  chunkSize: number;
 }) {
   // Helper function to divide the listItems array into chunks of size 'chunkSize'
-  const chunkArray = (arr: string[], chunkSize: number) => {
+  const chunkArray = (arr: string[]) => {
     const chunks = [];
     for (let i = 0; i < arr.length; i += chunkSize) {
       chunks.push(arr.slice(i, i + chunkSize));
@@ -120,20 +106,23 @@ function SplitList({
   };
 
   // Divide the listItems array into chunks of 3 items each
-  const itemChunks = chunkArray(listItems, 3);
+  const itemChunks = chunkArray(listItems);
 
   return (
     <Container>
       <Typography variant="h6">{title}</Typography>
-      <div style={{ display: "flex" }}>
+      <Grid container sx={{ justifyContent: "center" }} spacing={2}>
         {itemChunks.map((chunk, index) => (
-          <List key={index}>
+          <Grid item xs={6} sm={4} key={index}>
             {chunk.map((item, itemIndex) => (
-              <ListItem key={itemIndex}>{item}</ListItem>
+              <Box key={itemIndex}>
+                <ArrowRightIcon fontSize="small" sx={{marginRight: '5px'}}/>
+                {item}
+                </Box>
             ))}
-          </List>
+          </Grid>
         ))}
-      </div>
+      </Grid>
     </Container>
   );
 }
@@ -181,9 +170,6 @@ function Location() {
 }
 
 export default function Event() {
-  const router = useRouter();
-  let city = router.query && router.query.city ? router.query.city : "";
-
   return (
     <main>
       <Container sx={{ display: "flex", justifyContent: "center" }}>
@@ -193,6 +179,7 @@ export default function Event() {
           <ParagraphBlock
             title="Overview"
             text="Learn casting and splinting techniques through intensive hands-on instruction and application from experienced certified orthopaedic technologists. This workshop is organized by the National Association of Orthopaedic Technologists (NAOT) and will be held on Sat July 15th, 2023, at the Holiday Inn & Suites in Rosemont, Illinois."
+            variant="body1"
           />
           <StandardList />
           <SplitList
@@ -202,14 +189,15 @@ export default function Event() {
               "Short Arm",
               "Thumb Spica Cast",
               "Ulnar Gutter Cast",
-              "Ulnar Gutter Cast",
               "Long Arm Cast",
               "Short Leg Cast",
             ]}
+            chunkSize={3}
           />
           <SplitList
             title="CEU/CME's"
             listItems={["OTC", "OPA-C/OA-C", "ATC", "PA-C", "BOC"]}
+            chunkSize={3}
           />
 
           <ParagraphBlock
@@ -219,6 +207,7 @@ export default function Event() {
             Orthopaedic Technologists (NBCOT). Faculty will be nationally-
             recognized professionals with many years of experience in the
             field of orthopaedic technology."
+            variant="body1"
           />
           <ParagraphBlock
             title="Hotel"
@@ -228,13 +217,14 @@ export default function Event() {
             the hotel at 847-954-8600, and be sure to reference the room block
             for “National Association of Orthopaedic Technologists” to receive
             the special rate."
+            variant="body1"
           />
           <Register />
           <Location />
           <ParagraphBlock
             title="Cancellation"
             text="Cancellations must be made in writing. Cancelations are permitted up to two weeks prior to workshop date, and are assessed a $25 processing fee. Refunds are not provided for cancellations within two weeks of the scheduled program. Substitutions are permitted at any time."
-            size="sm"
+            variant="subtitle1"
           />
         </Paper>
       </Container>

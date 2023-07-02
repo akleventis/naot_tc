@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useRouter } from "next/router";
+import { WorkshopItem } from "@/utils/interfaces";
 import { CardActionArea, createTheme, ThemeProvider } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -25,53 +26,55 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           height: 110,
-        }
-      }
+        },
+      },
     },
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          marginRight: '5px',
-        }
-      }
-    }
+          marginRight: "5px",
+        },
+      },
+    },
   },
 });
 
-export default function MeetingCard() {
+export default function MeetingCard({
+  title,
+  data,
+}: {
+  title: string;
+  data: WorkshopItem;
+}) {
   const router = useRouter();
   const handleClick = () => {
-    router.push("/workshops/chicago");
+    router.push(`/workshops/${title}`);
   };
 
   return (
     <ThemeProvider theme={theme}>
       <Card onClick={handleClick}>
         <CardActionArea>
-          <CardMedia
-            component="img"
-            image="chicago.png"
-            alt="chicago"
-          />
+          <CardMedia component="img" image={data.img} alt={title} />
           <CardContent className="p-2">
             <Typography gutterBottom variant="body1" component="div">
-              Chicago Casting & Splinting Skills Workshop
+              {data.heading}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               <CalendarMonthIcon fontSize="small" />
-              Sat, June 15th, 2023
+              {data.date}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              <AccessTimeIcon fontSize="small"/>
-              8:00am - 5:00pm
+              <AccessTimeIcon fontSize="small" />
+              {data.time}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              <LocationOnIcon fontSize="small"/>
-              Chicago, IL
+              <LocationOnIcon fontSize="small" />
+              {data.location}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               <AttachMoneyIcon fontSize="small" />
-              Registration Fee: $100
+              Registration: ${data.fee}
             </Typography>
           </CardContent>
         </CardActionArea>

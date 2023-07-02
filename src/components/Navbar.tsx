@@ -7,10 +7,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 
-const styleBox = { flexGrow: 1, marginBottom: "1em" }
+const styleBox = { flexGrow: 1, marginBottom: "1em"}
 const styleContainer = { maxWidth: '1200px', }
 const styleImg = { width: 55, height: 55, cursor: "pointer", };
-const styleHeader = { flexGrow: 1, textAlign: "center", };
+const styleHeader = { flexGrow: 1, textAlign: "center"};
 const styleButton = { fontSize: "17px", color: 'inherit', fontWeight: "inherit", };
 
 export default function Navbar() {
