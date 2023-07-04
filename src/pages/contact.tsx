@@ -3,6 +3,8 @@ import { Container, Typography, TextField, Button } from "@mui/material";
 import { styled } from "@mui/system";
 import emailjs from "@emailjs/browser";
 
+const titleSX = {display: 'inline-block', paddingBottom: '.2em', width: '250px', color: "#2774AE", borderBottom: '3px solid #FFD100'}
+const bodySX = {marginTop: '.5em'}
 const Section = styled("div")({
   marginBottom: "1.5rem",
 });
@@ -37,8 +39,8 @@ function Contact() {
       <Container style={{ maxWidth: "1000px" }} sx={{ display: "flex", justifyContent: "center" }}>
         <div style={{ display: "flex", flexDirection: "column", textAlign: "center" }}>
           <Section>
-            <Typography variant="h4">Contact Us</Typography>
-            <Typography>
+            <Typography variant="h4" sx={titleSX}>Contact Us</Typography>
+            <Typography color='text.secondary' sx={bodySX}>
               Make sure to include your email address, name, and message body. We'll reach back as soon as possible.
             </Typography>
           </Section>

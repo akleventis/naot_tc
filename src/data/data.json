@@ -8,7 +8,7 @@
       "date": "Sat July 15th, 2023",
       "time": "8:00am - 5:00pm",
       "datetime": "Sat July 15th, 2023 8:00am - 5:00pm",
-      "fee": "100",
+      "fee": "Registration Fee $100",
       "overview": {
         "title": "Overview",
         "body": "Learn casting and splinting techniques through intensive hands-on instruction and application from experienced certified orthopaedic technologists. This workshop is organized by the National Association of Orthopaedic Technologists (NAOT) and will be held on Sat July 15th, 2023, at the Holiday Inn & Suites in Rosemont, Illinois."
@@ -48,17 +48,24 @@
       },
       "register": {
         "title": "Register",
+        "body": "* Registration ends 6/30/2023",
         "buy_id": "buy_btn_1NH9ViD6jiafmpE3gsUN6AHN",
         "buy_key": "pk_test_51NFfY3D6jiafmpE38xBE78d7ToSPLZd4s1P9idrr7Y9AE4VjjTwK1BdqmVFZMSmZ2vO8vUNXt9VosK5ty5DZmIDf00HQv2fvZv"
       },
       "venue": {
         "title": "Venue",
-        "iframe_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1482.5444457610254!2d-87.88509156111455!3d41.998367786129364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb668f8a2f9c7%3A0xcb7a515297bcb815!2sSonesta%20Chicago%20O&#39;Hare%20Airport%20Rosemont!5e0!3m2!1sen!2sus!4v1688080368304!5m2!1sen!2sus"
+        "iframe_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1482.5444457610254!2d-87.88509156111455!3d41.998367786129364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb668f8a2f9c7%3A0xcb7a515297bcb815!2sSonesta%20Chicago%20OHare%20Airport%20Rosemont!5e0!3m2!1sen!2sus!4v1688080368304!5m2!1sen!2sus",
+        "maps_url": "https://www.google.com/maps/place/10233+W+Higgins+Rd,+Rosemont,+IL+60018/@41.9970519,-87.8846421,17z/data=!3m1!4b1!4m6!3m5!1s0x880fb668567ca9d5:0xa2a33cbd58fd3bb1!8m2!3d41.9970479!4d-87.8820672!16s%2Fg%2F11bw40ky74?entry=ttu"
       },
       "address": {
         "name": "Holiday Inn & Suites",
         "street": "10233 West Higgins Rd.",
         "city_state_zip": "Rosemont, IL 60018"
+      },
+      "sponsor": {
+        "title": "Sponsored By",
+        "img": "bsn.png",
+        "url": "https://www.essity.com/company/essitys-business-and-operations-worldwide/health-and-medical/"
       },
       "cancellation": {
         "title": "Cancellations",
@@ -66,14 +73,14 @@
       }
     },
     {
-      "title": "cali",
-      "heading": "Casting & Splinting Skills Workshop in Chicago, IL",
-      "img": "chicago.png",
-      "date": "Sat July 15th, 2023",
-      "location": "Cali, Ca",
+      "title": "san_diego",
+      "heading": "Casting & Splinting Skills Workshop in San Diego, CA",
+      "img": "san_diego.png",
+      "date": "Sat May 25th, 2023",
+      "location": "San Diego, Ca",
       "time": "8:00am - 5:00pm",
-      "datetime": "Sat July 15th, 2023 8:00am - 5:00pm",
-      "fee": "100",
+      "datetime": "Sat May 25th, 2023 8:00am - 5:00pm",
+      "fee": "Registration Fee $100",
       "overview": {
         "title": "Overview",
         "body": "Learn casting and splinting techniques through intensive hands-on instruction and application from experienced certified orthopaedic technologists. This workshop is organized by the National Association of Orthopaedic Technologists (NAOT) and will be held on Sat July 15th, 2023, at the Holiday Inn & Suites in Rosemont, Illinois."
@@ -113,17 +120,96 @@
       },
       "register": {
         "title": "Register",
-        "buy_id": "buy_btn_1NH9ViD6jiafmpE3gsUN6AHN",
+        "body": "* Registration ends 6/30/2023",
+        "buy_id": "buy_btn_1NPuZYD6jiafmpE3pyER5ple",
         "buy_key": "pk_test_51NFfY3D6jiafmpE38xBE78d7ToSPLZd4s1P9idrr7Y9AE4VjjTwK1BdqmVFZMSmZ2vO8vUNXt9VosK5ty5DZmIDf00HQv2fvZv"
       },
       "venue": {
         "title": "Venue",
-        "iframe_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1482.5444457610254!2d-87.88509156111455!3d41.998367786129364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb668f8a2f9c7%3A0xcb7a515297bcb815!2sSonesta%20Chicago%20O&#39;Hare%20Airport%20Rosemont!5e0!3m2!1sen!2sus!4v1688080368304!5m2!1sen!2sus"
+        "iframe_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.456269587712!2d-117.20043582416767!3d32.72707318653641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80deab4001579dcf%3A0x4739eb75b8317ce9!2sSheraton%20San%20Diego%20Hotel%20%26%20Marina!5e0!3m2!1sen!2sus!4v1688420852354!5m2!1sen!2sus",
+        "maps_url": "https://www.google.com/maps/place/Sheraton+San+Diego+Hotel+%26+Marina/@32.7270732,-117.2004358,17z/data=!3m1!4b1!4m9!3m8!1s0x80deab4001579dcf:0x4739eb75b8317ce9!5m2!4m1!1i2!8m2!3d32.7270687!4d-117.1978609!16s%2Fg%2F1tkmmwb7?entry=ttu"
       },
       "address": {
-        "name": "Holiday Inn & Suites",
-        "street": "10233 West Higgins Rd.",
-        "city_state_zip": "Rosemont, IL 60018"
+        "name": "Sheraton San Diego Hotel & Marina",
+        "street": "1380 Harbor Island Dr",
+        "city_state_zip": "San Diego, CA 92101"
+      },
+      "sponsor": {
+        "title": "Sponsored By",
+        "img": "bsn.png",
+        "url": "https://www.essity.com/company/essitys-business-and-operations-worldwide/health-and-medical/"
+      },
+      "cancellation": {
+        "title": "Cancellations",
+        "body": "Cancellations must be made in writing. Cancelations are permitted up to two weeks prior to workshop date, and are assessed a $25 processing fee. Refunds are not provided for cancellations within two weeks of the scheduled program. Substitutions are permitted at any time."
+      }
+    },
+    {
+      "title": "raleigh",
+      "heading": "Casting & Splinting Skills Workshop in Raleigh, NC",
+      "img": "raleigh.png",
+      "date": "Sat May 25th, 2023",
+      "location": "Raleigh, Nc",
+      "time": "8:00am - 5:00pm",
+      "datetime": "Sat October 25th, 2023 8:00am - 5:00pm",
+      "fee": "Registration Fee $100",
+      "overview": {
+        "title": "Overview",
+        "body": "Learn casting and splinting techniques through intensive hands-on instruction and application from experienced certified orthopaedic technologists. This workshop is organized by the National Association of Orthopaedic Technologists (NAOT) and will be held on Sat July 15th, 2023, at the Holiday Inn & Suites in Rosemont, Illinois."
+      },
+      "learning": {
+        "title": "Overall Learning Objectives",
+        "items": [
+          "Demonstrate proper casting technique for application and removal of upper and lower extremity casts and splints achieve through lecture, demonstration, and hands-on practice.",
+          "Recognize indications for various types of cast/splint treatment.",
+          "Identify best practices for cast application and removal.",
+          "Identify casting/splinting complications and their possible solutions.",
+          "Learn proper patient care protocols."
+        ]
+      },
+      "topics": {
+        "title": "Topics and Applications",
+        "items": [
+          "Cast Complications",
+          "Short Arm",
+          "Thumb Spica Cast",
+          "Ulnar Gutter Cast",
+          "Long Arm Cast",
+          "Short Leg Cast"
+        ]
+      },
+      "certs": {
+        "title": "CEU/CME's",
+        "items": ["OTC", "OPA-C/OA-C", "ATC", "PA-C", "BOC"]
+      },
+      "faculty": {
+        "title": "Faculty",
+        "body": "Courses instructed by Certified Orthopaedic Technologists (OTC) credentialed by the National Board for Certification of Orthopaedic Technologists (NBCOT). Faculty will be nationally- recognized professionals with many years of experience in the field of orthopaedic technology."
+      },
+      "hotel": {
+        "title": "Hotel",
+        "body": "A special room rate of $99 per night plus tax for a single/double occupancy is available for workshop participants at the Holiday Inn Chicago O'Hare Rosemont. You may make reservations by calling the hotel at 847-954-8600, and be sure to reference the room block for “National Association of Orthopaedic Technologists” to receive the special rate."
+      },
+      "register": {
+        "title": "Register",
+        "body": "* Registration ends 6/30/2023",
+        "buy_id": "buy_btn_1NPulED6jiafmpE3aUAfL1Bl",
+        "buy_key": "pk_test_51NFfY3D6jiafmpE38xBE78d7ToSPLZd4s1P9idrr7Y9AE4VjjTwK1BdqmVFZMSmZ2vO8vUNXt9VosK5ty5DZmIDf00HQv2fvZv"
+      },
+      "venue": {
+        "title": "Venue",
+        "iframe_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.064212694251!2d-78.64329138473867!3d35.77379898017274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac5f715c1cea6b%3A0x6880d973431472da!2sRaleigh%20Convention%20Center!5e0!3m2!1sen!2sus!4v1688421164524!5m2!1sen!2sus",
+        "maps_url": "https://www.google.com/maps/place/Raleigh+Convention+Center/@35.773799,-78.6432914,17z/data=!3m1!4b1!4m6!3m5!1s0x89ac5f715c1cea6b:0x6880d973431472da!8m2!3d35.773799!4d-78.6411027!16s%2Fm%2F03wf_z9?entry=ttu"
+      },
+      "address": {
+        "name": "Raleigh Convention Center",
+        "street": "500 S Salisbury St.",
+        "city_state_zip": "Raleigh, NC 27601"
+      },
+      "sponsor": {
+        "title": "Sponsored By",
+        "img": "bsn.png",
+        "url": "https://www.essity.com/company/essitys-business-and-operations-worldwide/health-and-medical/"
       },
       "cancellation": {
         "title": "Cancellations",

@@ -1,6 +1,6 @@
-import data from '@/data/data.json'
-import { WorkshopData } from "@/utils/interfaces";
-import { useEffect } from "react";
+import data from "@/data/data.json";
+import { WorkshopData, ValidRoutes } from "@/utils/interfaces";
+import { ThemeProvider, createTheme } from "@mui/material";
 import { useRouter } from "next/router";
 import BuyButton from "@/components/BuyButton";
 import Paper from "@mui/material/Paper";
@@ -9,18 +9,36 @@ import Typography, { TypographyProps } from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
-const buyButtonID = "buy_btn_1NH9ViD6jiafmpE3gsUN6AHN";
-const buyButtonKey =
-  "pk_test_51NFfY3D6jiafmpE38xBE78d7ToSPLZd4s1P9idrr7Y9AE4VjjTwK1BdqmVFZMSmZ2vO8vUNXt9VosK5ty5DZmIDf00HQv2fvZv";
+const theme = createTheme({
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          marginBottom: "1em",
+        },
+      },
+    },
+    
+    MuiTypography: {
+      variants: [
+        {
+          props: {
+            variant: "h6",
+          },
+          style: {
+            display: 'inline-block',
+            borderBottom: '3px solid #FFD100',
+            marginBottom: '.5em'
+          }
+        },
+      ],
+    },
+  },
+});
 
-// map of city: city data
-// if val not in map, route to home screen && clear query params
-// use map to fill out all flyer details
-// separate json file, json -> map conversion
-// wrap in theme
-const imgContainer = {
+const imgSX = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -29,61 +47,77 @@ const imgContainer = {
   height: "200px",
   padding: "0px !important",
 };
-function HeaderImg() {
+const paperSX = {
+  maxWidth: "800px",
+  marginBottom: '5em'
+};
+
+function HeaderImg({ imgSrc }: { imgSrc: string }) {
+  const imgPath = `../flyerImages/${imgSrc}`;
   return (
-    <Container sx={imgContainer}>
+    <Box sx={imgSX}>
       <img
-        src="../chicago.png"
-        alt="hi"
+        src={imgPath}
+        alt={imgSrc}
         style={{ objectFit: "cover", width: "100%", height: "100%" }}
       />
-    </Container>
+    </Box>
   );
 }
-function Header() {
+
+function Header({ title, datetime }: { title: string; datetime: string }) {
   return (
     <>
       <Container>
-        <Typography variant="h6" component="div" textAlign={"center"}>
-          Casting & Splinting Skills Workshop in Chicago, IL
+        <Typography variant="h6" textAlign={"center"} color='primary'>
+          {title}
         </Typography>
       </Container>
       <Container>
-        <Typography variant="subtitle1" textAlign={"center"}>
-          Sat July 15th, 2023 8:00am - 5:00pm
+        <Typography variant="body1" textAlign={"center"} color='text.secondary'>
+          {datetime}
         </Typography>
       </Container>
     </>
   );
 }
 
-function ParagraphBlock({title, text, variant }: { title: string; text: string; variant: TypographyProps['variant']; }) {
+function ParagraphBlock({
+  title,
+  text,
+  variant,
+  color,
+}: {
+  title: string;
+  text: string;
+  variant: TypographyProps["variant"];
+  color: string;
+}) {
   return (
     <Container>
-      <Typography variant="h6">{title}</Typography>
-      <Typography variant={variant}>{text}</Typography>
+      <Typography variant="h6" color='primary'>{title}</Typography>
+      <Typography variant={variant} color={color}>
+        {text}
+      </Typography>
     </Container>
   );
 }
 
-function StandardList() {
-  let list = [
-    "Demonstrate proper casting technique for application and removal of upper and lower extremity casts and splints achieve through lecture, demonstration, and hands-on practice.",
-    "Recognize indications for various types of cast/splint treatment.",
-    "Identify best practices for cast application and removal.",
-    "Identify casting/splinting complications and their possible solutions.",
-    "Learn proper patient care protocols."
-  ];
+function StandardList({
+  title,
+  listItems,
+}: {
+  title: string;
+  listItems: string[];
+}) {
   return (
     <Container>
-      <Typography variant="h6">OVERALL LEARNING OBJECTIVES</Typography>
-      <ul style={{paddingLeft: "15px"}}>
-        {list.map((item, i) => {
-          return (
-            <li key={i}>{item}</li>
-          )
+      <Typography variant="h6" color='primary'>{title}</Typography>
+      <ul style={{ paddingLeft: "15px" }}>
+        {listItems.map((item, i) => {
+          return <li key={i} style={{marginBottom: '5px'}}>{item}</li>;
         })}
-        </ul>
+      </ul>
     </Container>
   );
 }
@@ -110,15 +144,15 @@ function SplitList({
 
   return (
     <Container>
-      <Typography variant="h6">{title}</Typography>
+      <Typography variant="h6" color='primary'>{title}</Typography>
       <Grid container sx={{ justifyContent: "center" }} spacing={2}>
         {itemChunks.map((chunk, index) => (
           <Grid item xs={6} sm={4} key={index}>
             {chunk.map((item, itemIndex) => (
               <Box key={itemIndex}>
-                <ArrowRightIcon fontSize="small" sx={{marginRight: '5px'}}/>
+                <ArrowRightIcon fontSize="small" sx={{ marginRight: "5px" }} />
                 {item}
-                </Box>
+              </Box>
             ))}
           </Grid>
         ))}
@@ -126,108 +160,183 @@ function SplitList({
     </Container>
   );
 }
-function Register() {
+function Register({
+  title,
+  buttonID,
+  buttonKey,
+  body,
+}: {
+  title: string;
+  buttonID: string;
+  buttonKey: string;
+  body: string;
+}) {
   return (
     <Container>
-      <Typography variant="h6" id="register">
-        Register
+      <Typography variant="h6" color='primary' id="register">
+        {title}
       </Typography>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <BuyButton buyButtonID={buyButtonID} buyButtonKey={buyButtonKey} />
+        <BuyButton buyButtonID={buttonID} buyButtonKey={buttonKey} />
       </div>
-      <Typography variant="body2">*Registration ends 6/30/2023</Typography>
+      <Typography variant="body2" sx={{ textAlign: "center" }}>
+        {body}
+      </Typography>
     </Container>
   );
 }
-function Location() {
+function Location({
+  title,
+  iframeURL,
+  mapsURL,
+  addressName,
+  addressStreet,
+  addressCityStateZip,
+}: {
+  title: string;
+  iframeURL: string;
+  mapsURL: string;
+  addressName: string;
+  addressStreet: string;
+  addressCityStateZip: string;
+}) {
   return (
     <Container>
-      <Typography variant="h6">Venue</Typography>
+      <Typography variant="h6" color='primary'>{title}</Typography>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1482.5444457610254!2d-87.88509156111455!3d41.998367786129364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb668f8a2f9c7%3A0xcb7a515297bcb815!2sSonesta%20Chicago%20O&#39;Hare%20Airport%20Rosemont!5e0!3m2!1sen!2sus!4v1688080368304!5m2!1sen!2sus"
+        src={iframeURL.replaceAll("&#39;", "")}
         width="100%"
         height="200"
         allowFullScreen={true}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-      <Button
-        style={{ padding: 0, display: "inline-block" }}
-        href="https://www.google.com/maps/place/10233+W+Higgins+Rd,+Rosemont,+IL+60018/@41.9970519,-87.8846421,17z/data=!3m1!4b1!4m6!3m5!1s0x880fb668567ca9d5:0xa2a33cbd58fd3bb1!8m2!3d41.9970479!4d-87.8820672!16s%2Fg%2F11bw40ky74?entry=ttu"
-      >
+      />
+      <Button style={{ padding: 0, display: "inline-block" }} href={mapsURL}>
         <Typography variant="body2" color="text.secondary">
-          Holiday Inn & Suites
+          {addressName}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          10233 West Higgins Rd.
+          {addressStreet}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Rosemont, IL 60018
+          {addressCityStateZip}
         </Typography>
       </Button>
     </Container>
   );
 }
 
-export default function Event() {
+function Sponsor({
+  title,
+  img,
+  url,
+}: {
+  title: string;
+  img: string;
+  url: string;
+}) {
+  const path = `../sponsors/${img}`;
   return (
-    <main>
-      <Container sx={{ display: "flex", justifyContent: "center" }}>
-        <Paper elevation={3} sx={{ maxWidth: "800px" }}>
-          <HeaderImg />
-          <Header />
-          <ParagraphBlock
-            title="Overview"
-            text="Learn casting and splinting techniques through intensive hands-on instruction and application from experienced certified orthopaedic technologists. This workshop is organized by the National Association of Orthopaedic Technologists (NAOT) and will be held on Sat July 15th, 2023, at the Holiday Inn & Suites in Rosemont, Illinois."
-            variant="body1"
-          />
-          <StandardList />
-          <SplitList
-            title="Topics and Applications"
-            listItems={[
-              "Cast Complications",
-              "Short Arm",
-              "Thumb Spica Cast",
-              "Ulnar Gutter Cast",
-              "Long Arm Cast",
-              "Short Leg Cast",
-            ]}
-            chunkSize={3}
-          />
-          <SplitList
-            title="CEU/CME's"
-            listItems={["OTC", "OPA-C/OA-C", "ATC", "PA-C", "BOC"]}
-            chunkSize={3}
-          />
+    <Container>
+      <Typography variant="h6" color='primary'>{title}</Typography>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <a href={url}>
+          <img height="70" src={path} />
+        </a>
+      </div>
+    </Container>
+  );
+}
 
-          <ParagraphBlock
-            title="Faculty"
-            text="Courses instructed by Certified Orthopaedic Technologists (OTC)
-            credentialed by the National Board for Certification of
-            Orthopaedic Technologists (NBCOT). Faculty will be nationally-
-            recognized professionals with many years of experience in the
-            field of orthopaedic technology."
-            variant="body1"
+export default function Event() {
+  const router = useRouter();
+  const city = router.query.city?.toString();
+  const workshopData: WorkshopData = data;
+  let validRoutes: ValidRoutes = {};
+
+  // if data does not exist for [slug], route to index
+  workshopData.items.map((e) => {
+    validRoutes[e.title] = true;
+  });
+  const workshopItem = workshopData.items.find((e) => e.title === city);
+
+  if (city !== undefined && !validRoutes[city]) {
+    router.push("/");
+    return;
+  }
+  if (workshopItem === undefined) {
+    return;
+  }
+
+  return (
+      <Container sx={{ display: "flex", justifyContent: "center"}}>
+        <Paper elevation={3} sx={paperSX}>
+          <HeaderImg imgSrc={workshopItem.img} />
+          <Header
+            title={workshopItem.heading}
+            datetime={workshopItem.datetime}
           />
-          <ParagraphBlock
-            title="Hotel"
-            text="A special room rate of $99 per night plus tax for a single/double
-            occupancy is available for workshop participants at the Holiday
-            Inn Chicago O'Hare Rosemont. You may make reservations by calling
-            the hotel at 847-954-8600, and be sure to reference the room block
-            for “National Association of Orthopaedic Technologists” to receive
-            the special rate."
-            variant="body1"
-          />
-          <Register />
-          <Location />
-          <ParagraphBlock
-            title="Cancellation"
-            text="Cancellations must be made in writing. Cancelations are permitted up to two weeks prior to workshop date, and are assessed a $25 processing fee. Refunds are not provided for cancellations within two weeks of the scheduled program. Substitutions are permitted at any time."
-            variant="subtitle1"
-          />
+          <ThemeProvider theme={theme}>
+            <ParagraphBlock
+              title={workshopItem.overview.title}
+              text={workshopItem.overview.body}
+              variant="body1"
+              color="text.primary"
+            />
+            <StandardList
+              title={workshopItem.learning.title}
+              listItems={workshopItem.learning.items}
+            />
+            <SplitList
+              title={workshopItem.topics.title}
+              listItems={workshopItem.topics.items}
+              chunkSize={3}
+            />
+            <SplitList
+              title={workshopItem.certs.title}
+              listItems={workshopItem.certs.items}
+              chunkSize={3}
+            />
+
+            <ParagraphBlock
+              title={workshopItem.faculty.title}
+              text={workshopItem.faculty.body}
+              variant="body1"
+              color="text.primary"
+            />
+            <ParagraphBlock
+              title={workshopItem.hotel.title}
+              text={workshopItem.hotel.body}
+              variant="body1"
+              color="text.primary"
+            />
+            <Register
+              title={workshopItem.register.title}
+              buttonID={workshopItem.register.buy_id}
+              buttonKey={workshopItem.register.buy_key}
+              body={workshopItem.register.body}
+            />
+            <Location
+              title={workshopItem.venue.title}
+              iframeURL={workshopItem.venue.iframe_url}
+              mapsURL={workshopItem.venue.maps_url}
+              addressName={workshopItem.address.name}
+              addressStreet={workshopItem.address.street}
+              addressCityStateZip={workshopItem.address.city_state_zip}
+            />
+            <Sponsor
+              title={workshopItem.sponsor.title}
+              img={workshopItem.sponsor.img}
+              url={workshopItem.sponsor.url}
+            />
+            <ParagraphBlock
+              title={workshopItem.cancellation.title}
+              text={workshopItem.cancellation.body}
+              variant="body2"
+              color="text.secondary"
+            />
+          </ThemeProvider>
         </Paper>
       </Container>
-    </main>
   );
 }
