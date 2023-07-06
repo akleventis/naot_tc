@@ -1,13 +1,12 @@
 import { useRef } from 'react';
-import { Container, Typography, TextField, Button, useTheme } from '@mui/material';
-import { styled } from '@mui/system';
+import { Container, Typography, TextField, Button } from '@mui/material';
 import emailjs from '@emailjs/browser';
 
 const title = 'Contact Us';
-const body = 'Make sure to include your email address, name, and message body. We\'ll reach back as soon as possible.';
+const body =
+  'Make sure to include your email address, name, and message body. We\'ll reach back as soon as possible.';
 
 function Contact() {
-  const theme = useTheme()
   const formRef = useRef<HTMLFormElement>(null);
 
   const [public_key, service_id, template_id] = [
@@ -19,97 +18,78 @@ function Contact() {
   const handleSendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(service_id!, template_id!, formRef.current!, public_key)
-      .then(
-        (result) => {
-          console.log(result.text);
-          formRef.current?.reset();
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm(service_id!, template_id!, formRef.current!, public_key).then(
+      (result) => {
+        console.log(result.text);
+        formRef.current?.reset();
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
-  const titleSX = {
-    display: 'inline-block',
-    paddingBottom: '.2em',
-    width: '250px',
-    color: `${theme.palette.primary.main}`,
-    borderBottom: `3px solid ${theme.palette.secondary.main}`,
+  const c1SX = {
+    maxWidth: '1000px',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    textAlign: 'center',
   };
-  const bodySX = { marginTop: '.5em' };
-  const Section = styled('div')({
-    marginBottom: '1.5rem',
-  });
+  const c2SX = {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    width: '450px',
+  };
 
   return (
     <main>
-      <Container
-        style={{ maxWidth: '1000px' }}
-        sx={{ display: 'flex', justifyContent: 'center' }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            textAlign: 'center',
-          }}
-        >
-          <Section>
-            <Typography variant='h5' sx={titleSX}>
-              {title}
-            </Typography>
-            <Typography color='text.secondary' sx={bodySX}>
-              {body}
-            </Typography>
-          </Section>
-
-          <form id='email-form' onSubmit={handleSendEmail} ref={formRef}>
-            <Container
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                width: '450px',
-              }}
-            >
-              <TextField
-                type='email'
-                label='Email Address'
-                required
-                name='from_email'
-                autoComplete='off'
-                autoCorrect='off'
-                sx={{ marginBottom: '1.5em' }}
-              />
-
-              <TextField
-                type='text'
-                label='Full Name'
-                required
-                name='from_name'
-                autoComplete='off'
-                autoCorrect='off'
-                sx={{ marginBottom: '1.5em' }}
-              />
-
-              <TextField
-                multiline
-                rows={5}
-                label='Message'
-                required
-                name='message'
-                sx={{ marginBottom: '1.5em' }}
-              />
-
-              <Button variant='contained' type='submit'>
-                Submit
-              </Button>
-            </Container>
-          </form>
+      <Container sx={c1SX}>
+        <div>
+          <Typography variant='h5' sx={{ mb: '.5em' }}>
+            {title}
+          </Typography>
+          <Typography variant='body1' color='text.secondary' sx={{ mb: '.5em' }}>
+            {body}
+          </Typography>
         </div>
+        <form id='email-form' onSubmit={handleSendEmail} ref={formRef}>
+          <Container sx={c2SX}>
+            <TextField
+              type='email'
+              label='Email Address'
+              required
+              name='from_email'
+              autoComplete='off'
+              autoCorrect='off'
+              sx={{ mb: '1.5em' }}
+            />
+
+            <TextField
+              type='text'
+              label='Full Name'
+              required
+              name='from_name'
+              autoComplete='off'
+              autoCorrect='off'
+              sx={{ mb: '1.5em' }}
+            />
+
+            <TextField
+              multiline
+              rows={5}
+              label='Message'
+              required
+              name='message'
+              sx={{ mb: '1.5em' }}
+            />
+
+            <Button variant='contained' type='submit'>
+              Submit
+            </Button>
+          </Container>
+        </form>
       </Container>
     </main>
   );

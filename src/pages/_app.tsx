@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import  Head  from 'next/head'
+import Head from 'next/head';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { useQueryParams } from '@/utils/useQueryParams';
 import Navbar from '@/components/Navbar';
@@ -10,11 +10,11 @@ import '@/styles/globals.scss';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2774AE'
+      main: '#2774AE',
     },
     secondary: {
-      main: '#FFD100'
-    }
+      main: '#FFD100',
+    },
   },
   components: {
     MuiSvgIcon: {
@@ -32,18 +32,30 @@ const theme = createTheme({
             variant: 'h6',
           },
           style: {
+            color: '#2774AE',
+            fontWeight: 'normal',
             display: 'inline-block',
             borderBottom: '3px solid #FFD100',
-            marginBottom: '.5em',
-          }
+          },
+        },
+        {
+          props: {
+            variant: 'h5',
+          },
+          style: {
+            color: '#2774AE',
+            fontSize: '20px',
+            display: 'inline-block',
+            borderBottom: '3px solid #FFD100',
+          },
         },
       ],
     },
   },
-})
+});
 
-const title = 'NAOT'
-const content = 'National Association of Orthopedic Technicians'
+const title = 'NAOT';
+const content = 'National Association of Orthopedic Technicians';
 
 export default function App({ Component, pageProps }: AppProps) {
   const { showModal, setShowModal, clearQueryParams } = useQueryParams();
@@ -61,11 +73,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>{title}</title>
       </Head>
       <ThemeProvider theme={theme}>
-      <SuccessModal show={showModal} handleClose={handleClose} />
-      <Navbar />
-      <Container sx={{ maxWidth: '1000px'}}>
-        <Component {...pageProps} />
-      </Container>
+        <SuccessModal show={showModal} handleClose={handleClose} />
+        <Navbar />
+        <Container sx={{ maxWidth: '1000px' }}>
+          <Component {...pageProps} />
+        </Container>
       </ThemeProvider>
     </>
   );
