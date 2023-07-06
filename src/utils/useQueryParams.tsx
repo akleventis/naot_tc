@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 
 export function useQueryParams() {
   const router = useRouter();
@@ -8,7 +8,7 @@ export function useQueryParams() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    query.success === "true" && setShowModal(true)
+    query.success === 'true' && setShowModal(true)
 
   }, [query.success]);
 

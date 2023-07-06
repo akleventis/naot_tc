@@ -61,7 +61,3 @@ export interface WorkshopItem {
 export interface WorkshopData {
   items: WorkshopItem[];
 }
-
-export interface ValidRoutes {
-  [key: string]: boolean;
-}
