@@ -65,6 +65,11 @@ export default function App({ Component, pageProps }: AppProps) {
     clearQueryParams();
   };
 
+  const containerSX = {
+    maxWidth: '1000px',
+    padding: '4em 0'
+  }
+
   return (
     <>
       <Head>
@@ -75,7 +80,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <SuccessModal show={showModal} handleClose={handleClose} />
         <Navbar />
-        <Container sx={{ maxWidth: '1000px' }}>
+        <Container sx={containerSX}>
           <Component {...pageProps} />
         </Container>
       </ThemeProvider>

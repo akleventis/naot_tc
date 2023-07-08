@@ -14,7 +14,6 @@ export default function Home() {
   const gridSX = { display: 'flex', justifyContent: 'center' };
   const headSX = {
     display: 'inline-block',
-    paddingBottom: '.5em',
     marginBottom: '1em',
     color: theme.palette.primary.main,
     borderBottom: `3px solid ${theme.palette.secondary.main}`,
