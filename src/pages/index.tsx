@@ -16,7 +16,7 @@ export default function Home() {
     display: 'inline-block',
     marginBottom: '1em',
     color: theme.palette.primary.main,
-    borderBottom: `3px solid ${theme.palette.secondary.main}`,
+    borderBottom: `3px solid ${theme.palette.secondary.main}`
   };
 
   return (
