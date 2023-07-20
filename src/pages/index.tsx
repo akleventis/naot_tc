@@ -1,5 +1,5 @@
 import data from '@/data/data.json';
-import { WorkshopData } from '@/utils/interfaces';
+import { WorkshopData, SharedData } from '@/utils/interfaces';
 import { useTheme } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import MeetingCard from '@/components/MeetingCard';
@@ -9,7 +9,8 @@ const title = 'Upcoming Events';
 
 export default function Home() {
   const theme = useTheme();
-  const workshopData: WorkshopData = data;
+  const workshopData: WorkshopData = data.events;
+  const sharedData: SharedData = data.constants;
 
   const gridSX = { display: 'flex', justifyContent: 'center' };
   const headSX = {
@@ -28,7 +29,7 @@ export default function Home() {
         {workshopData.items.map((item, i) => {
           return (
             <Grid key={i} sx={gridSX} item xs={12} sm={6} md={4}>
-              <MeetingCard data={item} />
+              <MeetingCard data={item} sharedData={sharedData} />
             </Grid>
           );
         })}

@@ -9,7 +9,7 @@ function SuccessModal({
 }) {
   const theme = useTheme()
   const title = 'Success!';
-  const body = 'You should receive an email shortly regarding your processed payment';
+  const body = 'A payment to SKILLS WORKSHOP has been processed and will appear on your statement. Keep an eye on your email for further details.';
 
   const modalSX = {
     position: 'absolute' as 'absolute',
@@ -37,7 +37,7 @@ function SuccessModal({
         <Typography id='modal-modal-title' variant='h6' border={'none'} component='h2'>
           {title}
         </Typography>
-        <Typography id='modal-modal-description' sx={{ mt: 2 }}>
+        <Typography id='modal-modal-description' sx={{ mt: 1 }}>
           {body}
         </Typography>
       </Box>

@@ -20,7 +20,7 @@ export function HeaderImg({ imgSrc }: { imgSrc: string }) {
   );
 }
 
-export function Header({ title, datetime }: { title: string; datetime: string }) {
+export function Header({ title, date, time }: { title: string; date: string, time: string }) {
   return (
     <>
       <Container sx={{ margin: '5px 0', textAlign: 'center' }}>
@@ -30,7 +30,7 @@ export function Header({ title, datetime }: { title: string; datetime: string })
       </Container>
       <Container>
         <Typography variant='body1' textAlign={'center'} color='text.secondary'>
-          {datetime}
+          {date}{' '}{time}
         </Typography>
       </Container>
     </>
@@ -41,7 +41,7 @@ export function ParagraphBlock({
   title,
   text,
   variant,
-  color,
+  color
 }: {
   title: string;
   text: string;

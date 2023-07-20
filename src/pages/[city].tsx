@@ -1,5 +1,5 @@
 import data from '@/data/data.json';
-import { WorkshopData } from '@/utils/interfaces';
+import { WorkshopData, SharedData } from '@/utils/interfaces';
 import { useRouter } from 'next/router';
 import {Paper, Container } from '@mui/material';
 import {HeaderImg, Header, ParagraphBlock, StandardList, SplitList, Register, Location, Sponsor} from '@/components/Event'
@@ -7,7 +7,8 @@ import {HeaderImg, Header, ParagraphBlock, StandardList, SplitList, Register, Lo
 export default function Event() {
   const router = useRouter();
   const city = router.query.city?.toString();
-  const workshopData: WorkshopData = data;
+  const workshopData: WorkshopData = data.events;
+  const sharedData: SharedData = data.constants
 
   // if [slug] does not exist in our dataset, route to index
   const workshopItem = workshopData.items.find((e) => e.title === city);
@@ -31,32 +32,33 @@ export default function Event() {
           <HeaderImg imgSrc={workshopItem.img} />
           <Header
             title={workshopItem.heading}
-            datetime={workshopItem.datetime}
+            date={workshopItem.date}
+            time={workshopItem.time}
           />
             <ParagraphBlock
-              title={workshopItem.overview.title}
-              text={workshopItem.overview.body}
+              title={sharedData.overview.title}
+              text={sharedData.overview.body}
               variant='body1'
               color='text.primary'
             />
             <StandardList
-              title={workshopItem.learning.title}
-              listItems={workshopItem.learning.items}
+              title={sharedData.learning.title}
+              listItems={sharedData.learning.items}
             />
             <SplitList
-              title={workshopItem.topics.title}
-              listItems={workshopItem.topics.items}
+              title={sharedData.topics.title}
+              listItems={sharedData.topics.items}
               chunkSize={3}
             />
             <SplitList
-              title={workshopItem.certs.title}
-              listItems={workshopItem.certs.items}
+              title={sharedData.certs.title}
+              listItems={sharedData.certs.items}
               chunkSize={3}
             />
 
             <ParagraphBlock
-              title={workshopItem.faculty.title}
-              text={workshopItem.faculty.body}
+              title={sharedData.faculty.title}
+              text={sharedData.faculty.body}
               variant='body1'
               color='text.primary'
             />
@@ -81,13 +83,13 @@ export default function Event() {
               addressCityStateZip={workshopItem.address.city_state_zip}
             />
             <Sponsor
-              title={workshopItem.sponsor.title}
-              imgSrc={workshopItem.sponsor.img}
-              url={workshopItem.sponsor.url}
+              title={sharedData.sponsor.title}
+              imgSrc={sharedData.sponsor.img}
+              url={sharedData.sponsor.url}
             />
             <ParagraphBlock
-              title={workshopItem.cancellation.title}
-              text={workshopItem.cancellation.body}
+              title={sharedData.cancellation.title}
+              text={sharedData.cancellation.body}
               variant='body2'
               color='text.secondary'
             />

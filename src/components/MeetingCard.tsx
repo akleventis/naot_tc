@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { WorkshopItem } from '@/utils/interfaces';
+import { WorkshopItem, SharedData } from '@/utils/interfaces';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -9,7 +9,7 @@ import PaymentIcon from '@mui/icons-material/Payment';
 
 const imgPath = `/events`
 
-export default function MeetingCard({ data }: { data: WorkshopItem }) {
+export default function MeetingCard({ data, sharedData }: { data: WorkshopItem, sharedData: SharedData }) {
   const cardSx = {
     maxWidth: 300,
     minWidth: 250,
@@ -44,7 +44,7 @@ export default function MeetingCard({ data }: { data: WorkshopItem }) {
               </Typography>
               <Typography variant='body2' color='text.secondary'>
                 <PaymentIcon />
-                {data.fee}
+                {sharedData.fee}
               </Typography>
             </CardContent>
           </CardActionArea>

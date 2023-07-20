@@ -1,11 +1,4 @@
-export interface WorkshopItem {
-  title: string;
-  heading: string;
-  img: string;
-  location: string;
-  date: string;
-  time: string;
-  datetime: string;
+export interface SharedData {
   fee: string;
   overview: {
     title: string;
@@ -27,6 +20,24 @@ export interface WorkshopItem {
     title: string;
     body: string;
   };
+  sponsor: {
+    title: string;
+    img: string;
+    url: string;
+  };
+  cancellation: {
+    title: string;
+    body: string;
+  };
+}
+
+export interface WorkshopItem {
+  title: string;
+  heading: string;
+  img: string;
+  location: string;
+  date: string;
+  time: string;
   hotel: {
     title: string;
     body: string;
@@ -46,15 +57,6 @@ export interface WorkshopItem {
     name: string;
     street: string;
     city_state_zip: string;
-  };
-  sponsor: {
-    title: string;
-    img: string;
-    url: string;
-  };
-  cancellation: {
-    title: string;
-    body: string;
   };
 }
 
