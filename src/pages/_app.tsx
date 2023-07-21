@@ -1,13 +1,14 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 import { useQueryParams } from '@/utils/useQueryParams';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Container from '@mui/material/Container';
 import SuccessModal from '@/components/SuccessModal';
 import '@/styles/globals.scss';
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
       main: '#2774AE',
@@ -54,6 +55,8 @@ const theme = createTheme({
   },
 });
 
+theme = responsiveFontSizes(theme);
+
 const title = 'NAOT';
 const content = 'National Association of Orthopedic Technicians';
 
@@ -67,7 +70,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const containerSX = {
     maxWidth: '1000px',
-    padding: '4em 0'
+    padding: '4em 0 2em 0'
   }
 
   return (
@@ -84,6 +87,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </Container>
       </ThemeProvider>
+      <Footer />
     </>
   );
 }

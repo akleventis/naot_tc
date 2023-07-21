@@ -20,11 +20,9 @@ export default function Event() {
     return;
   }
   
+
+  const paperSX = {maxWidth: '800px', marginBottom: '5em'};
   const flexCenterSX = {display: 'flex', justifyContent: 'center'}
-  const paperSX = {
-    maxWidth: '800px',
-    marginBottom: '5em'
-  };
 
   return (
       <Container sx={flexCenterSX}>
@@ -32,50 +30,57 @@ export default function Event() {
           <HeaderImg imgSrc={workshopItem.img} />
           <Header
             title={workshopItem.heading}
+            titleVariant='h6'
+            bodyVariant='body1'
             date={workshopItem.date}
             time={workshopItem.time}
           />
             <ParagraphBlock
               title={sharedData.overview.title}
-              text={sharedData.overview.body}
-              variant='body1'
+              body={sharedData.overview.body}
+              titleVariant='h6'
+              bodyVariant='body1'
               color='text.primary'
             />
             <StandardList
               title={sharedData.learning.title}
               listItems={sharedData.learning.items}
+              titleVariant='h6'
+              listItemsVariant='body1'
             />
             <SplitList
               title={sharedData.topics.title}
               listItems={sharedData.topics.items}
+              titleVariant='h6'
+              listItemsVariant='body1'
               chunkSize={3}
             />
             <SplitList
               title={sharedData.certs.title}
               listItems={sharedData.certs.items}
+              titleVariant='h6'
+              listItemsVariant='body1'
               chunkSize={3}
             />
-
             <ParagraphBlock
               title={sharedData.faculty.title}
-              text={sharedData.faculty.body}
-              variant='body1'
+              body={sharedData.faculty.body}
+              titleVariant='h6'
+              bodyVariant='body1'
               color='text.primary'
             />
-            {/* <ParagraphBlock
-              title={workshopItem.hotel.title}
-              text={workshopItem.hotel.body}
-              variant='body1'
-              color='text.primary'
-            /> */}
             <Register
               title={workshopItem.register.title}
+              body={workshopItem.register.body}
+              titleVariant='h6'
+              bodyVariant='body2'
               buttonID={workshopItem.register.buy_id}
               buttonKey={workshopItem.register.buy_key}
-              body={workshopItem.register.body}
             />
             <Location
               title={workshopItem.venue.title}
+              titleVariant='h6'
+              bodyVariant='body2'
               iframeURL={workshopItem.venue.iframe_url}
               mapsURL={workshopItem.venue.maps_url}
               addressName={workshopItem.address.name}
@@ -84,13 +89,15 @@ export default function Event() {
             />
             <Sponsor
               title={sharedData.sponsor.title}
+              titleVariant='h6'
               imgSrc={sharedData.sponsor.img}
               url={sharedData.sponsor.url}
             />
             <ParagraphBlock
               title={sharedData.cancellation.title}
-              text={sharedData.cancellation.body}
-              variant='body2'
+              body={sharedData.cancellation.body}
+              titleVariant='h6'
+              bodyVariant='body1'
               color='text.secondary'
             />
         </Paper>

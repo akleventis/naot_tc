@@ -22,7 +22,7 @@ export default function Navbar() {
     color: 'inherit',
     fontWeight: 'inherit',
     '@media (max-width: 500px)': {
-      fontSize: '10px',
+      fontSize: '12px',
     },
   };
 
