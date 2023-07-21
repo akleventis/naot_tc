@@ -8,10 +8,6 @@
         "location": "Chicago, IL",
         "date": "Sat Sept. 16th, 2023",
         "time": "8:00am - 5:00pm",
-        "hotel": {
-          "title": "Hotel",
-          "body": "Information regarding discounted fees TBA"
-        },
         "register": {
           "title": "Register",
           "body": "* Registration ends 9/01/2023",
@@ -36,10 +32,6 @@
         "date": "Sat Oct 21th, 2023",
         "location": "St. Louis, MO",
         "time": "8:00am - 5:00pm",
-        "hotel": {
-          "title": "Hotel",
-          "body": "Information regarding discounted fees TBA"
-        },
         "register": {
           "title": "Register",
           "body": "* Registration ends 10/06/2023",
@@ -64,10 +56,6 @@
         "date": "Sat Nov 4th, 2023",
         "location": "Atlanta, GA",
         "time": "8:00am - 5:00pm",
-        "hotel": {
-          "title": "Hotel",
-          "body": "Information regarding discounted fees TBA"
-        },
         "register": {
           "title": "Register",
           "body": "* Registration ends 10/20/2023",

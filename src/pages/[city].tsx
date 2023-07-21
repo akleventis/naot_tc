@@ -62,12 +62,12 @@ export default function Event() {
               variant='body1'
               color='text.primary'
             />
-            <ParagraphBlock
+            {/* <ParagraphBlock
               title={workshopItem.hotel.title}
               text={workshopItem.hotel.body}
               variant='body1'
               color='text.primary'
-            />
+            /> */}
             <Register
               title={workshopItem.register.title}
               buttonID={workshopItem.register.buy_id}
