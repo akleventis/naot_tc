@@ -38,10 +38,6 @@ export interface WorkshopItem {
   location: string;
   date: string;
   time: string;
-  hotel: {
-    title: string;
-    body: string;
-  };
   register: {
     title: string;
     body: string;
