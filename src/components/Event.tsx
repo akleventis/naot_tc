@@ -23,7 +23,6 @@ export function HeaderImg({ imgSrc }: { imgSrc: string }) {
     ...flexCenterSX,
   };
 
-
   return (
     <Box sx={boxSX}>
       <img
@@ -80,7 +79,7 @@ export function ParagraphBlock({
 }) {
   return (
     <Container sx={mbSX}>
-      <Typography variant={titleVariant} sx={{...mbSX, ...textSX}}>
+      <Typography variant={titleVariant} sx={{ ...mbSX, ...textSX }}>
         {title}
       </Typography>
       <Typography variant={bodyVariant} sx={textSX} color={color}>
@@ -103,14 +102,16 @@ export function StandardList({
 }) {
   return (
     <Container sx={mbSX}>
-      <Typography variant={titleVariant} sx={{...mbSX, ...textSX}}>
+      <Typography variant={titleVariant} sx={{ ...mbSX, ...textSX }}>
         {title}
       </Typography>
       <ul style={{ paddingLeft: '15px' }}>
         {listItems.map((item, i) => {
           return (
             <li key={i}>
-              <Typography variant={listItemsVariant} sx={textSX}>{item}</Typography>
+              <Typography variant={listItemsVariant} sx={textSX}>
+                {item}
+              </Typography>
             </li>
           );
         })}
@@ -145,7 +146,7 @@ export function SplitList({
 
   return (
     <Container sx={mbSX}>
-      <Typography variant={titleVariant} sx={{...mbSX, ...textSX}}>
+      <Typography variant={titleVariant} sx={{ ...mbSX, ...textSX }}>
         {title}
       </Typography>
       <Grid container justifyContent={'center'} spacing={2}>
@@ -182,13 +183,20 @@ export function Register({
 }) {
   return (
     <Container sx={mbSX}>
-      <Typography variant={titleVariant} id="register" sx={{...mbSX, ...textSX}}>
+      <Typography variant={titleVariant} id="register" sx={{ ...mbSX, ...textSX }}>
         {title}
       </Typography>
       <div style={flexCenterSX}>
         <stripe-buy-button buy-button-id={buttonID} publishable-key={buttonKey} />
       </div>
-      <Typography variant={bodyVariant}  sx={textSX} textAlign="center">
+      <Typography variant={bodyVariant} sx={{...textSX, ...mbSX}} textAlign="center">
+        * Upon purchasing multiple tickets, please send an email to{' '}
+        <b>
+          <a href="mailto:mynaotops@gmail.com">mynaotops@gmail.com </a>
+        </b>
+        containing the names of all attendees.
+      </Typography>
+      <Typography variant={bodyVariant} sx={textSX} textAlign="center" color="text.secondary">
         {body}
       </Typography>
     </Container>
@@ -215,7 +223,7 @@ export function Location({
 }) {
   return (
     <Container sx={mbSX}>
-      <Typography variant={titleVariant} sx={{...mbSX, ...textSX}}>
+      <Typography variant={titleVariant} sx={{ ...mbSX, ...textSX }}>
         {title}
       </Typography>
       <iframe
@@ -254,7 +262,7 @@ export function Sponsor({
 }) {
   return (
     <Container sx={mbSX}>
-      <Typography variant={titleVariant} sx={{...mbSX, ...textSX}}>
+      <Typography variant={titleVariant} sx={{ ...mbSX, ...textSX }}>
         {title}
       </Typography>
       <div style={flexCenterSX}>
