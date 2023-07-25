@@ -40,7 +40,11 @@ function Contact() {
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    width: '450px',
+    width: '400px',
+    '@media (max-width: 500px)': {
+      width: '350px',
+      fontSize: '90%',
+    },
   };
 
   return (
