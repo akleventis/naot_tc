@@ -30,7 +30,7 @@ if (stripe_key === undefined) {
 const stripe = new Stripe(stripe_key, { apiVersion: api_version });
 
 const main = async () => {
-  let registrationMap = {}; // scripts/readme.md
+  let registrationMap = {}; // https://github.com/akleventis/naot_tc/tree/main/scripts#data-structure
 
   // checkout session list pagination
   let [lastObject, has_more] = [undefined, true]; 
@@ -55,10 +55,10 @@ const main = async () => {
         // retrieve a session's line items (https://stripe.com/docs/api/checkout/sessions/line_items)
         const line_item = await stripe.checkout.sessions.listLineItems(session_item.id);
 
-        // populate customer data fields to be stored in registrationMap
+        // populate transaction fields to be stored in registrationMap
         let data = {
           attendee_full_name: session_item.custom_fields[0].text.value,
-          address: session_item.customer_details.address,
+          address:  JSON.stringify(session_item.customer_details.address),
           email: session_item.customer_details.email,
           name: session_item.customer_details.name,
           phone: session_item.customer_details.phone,
@@ -67,12 +67,11 @@ const main = async () => {
           product_id: line_item.data[0].price.product,
           quantity: line_item.data[0].quantity,
         };
-        data.address = JSON.stringify(data.address);
 
         // initialize the array if it doesn't exist
         registrationMap[data.product_id] ??= [];
 
-        // push the data into the array
+        // push data into the array 
         registrationMap[data.product_id].push(data);
       }
     }

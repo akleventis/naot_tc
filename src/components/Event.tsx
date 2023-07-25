@@ -192,7 +192,7 @@ export function Register({
       <Typography variant={bodyVariant} sx={{...textSX, ...mbSX}} textAlign="center">
         * Upon purchasing multiple tickets, please send an email to{' '}
         <b>
-          <a href="mailto:mynaotops@gmail.com">mynaotops@gmail.com </a>
+          <a href="mailto:support@mynaot.org">support@mynaot.org </a>
         </b>
         containing the names of all attendees.
       </Typography>
@@ -267,7 +267,7 @@ export function Sponsor({
       </Typography>
       <div style={flexCenterSX}>
         <a href={url}>
-          <img height="70" src={`${sponsorPath}/${imgSrc}`} />
+          <img height="45" src={`${sponsorPath}/${imgSrc}`} />
         </a>
       </div>
     </Container>
