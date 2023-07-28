@@ -5,6 +5,8 @@ import emailjs from '@emailjs/browser';
 const title = 'Contact Us';
 const body =
   'Make sure to include your email address, name, and message body. We\'ll reach back as soon as possible.';
+const email = "support@mynaotops.org"
+
 
 function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -94,6 +96,9 @@ function Contact() {
             </Button>
           </Container>
         </form>
+        <Typography variant='body1' color='text.secondary' sx={{ mt: '.5em' }}>
+        emails sent to: <a style={{textDecoration: 'underline'}}href="mailto:support@mynaot.org"><em>{email}</em></a>
+          </Typography>
       </Container>
     </main>
   );
