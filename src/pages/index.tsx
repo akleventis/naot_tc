@@ -1,5 +1,6 @@
 import data from '@/data/data.json';
 import { WorkshopData, SharedData } from '@/utils/interfaces';
+import { ParagraphBlock } from '@/components/Event';
 import { useTheme } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import MeetingCard from '@/components/MeetingCard';
@@ -13,12 +14,12 @@ export default function Home() {
   const sharedData: SharedData = data.constants;
 
   const flexCenterSX = { display: 'flex', justifyContent: 'center' };
-  const titleSX = {
-    display: 'inline-block',
-    marginBottom: '1em',
-    color: theme.palette.primary.main,
-    borderBottom: `3px solid ${theme.palette.secondary.main}`
-  };
+  // const titleSX = {
+  //   display: 'inline-block',
+  //   marginBottom: '1em',
+  //   color: theme.palette.primary.main,
+  //   borderBottom: `3px solid ${theme.palette.secondary.main}`
+  // };
   const titleContainerSX = {
     '@media (max-width: 500px)': {
       display: 'flex',
@@ -28,11 +29,9 @@ export default function Home() {
 
   return (
     <main>
-      <Box sx={titleContainerSX}> 
-        <Typography variant="h5" component="h1" sx={titleSX}>
-          {title}
-        </Typography>
-      </Box>
+      <ParagraphBlock title={sharedData.main.history_title} body={sharedData.main.history_body} titleVariant='h6' bodyVariant='body1' color='black'/>
+      <ParagraphBlock title={sharedData.main.statement_title} body={sharedData.main.statement_body} titleVariant='h6' bodyVariant='body1' color='black'/>
+      <ParagraphBlock title={title} body='' titleVariant='h6' bodyVariant='body1' color='black'/>
       <Grid container spacing={2}>
         {workshopData.items.map((item, i) => {
           return (

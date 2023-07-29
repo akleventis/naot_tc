@@ -1,4 +1,10 @@
 export interface SharedData {
+  main: {
+    history_title: string;
+    history_body: string;
+    statement_title: string;
+    statement_body: string;
+  }
   fee: string;
   overview: {
     title: string;

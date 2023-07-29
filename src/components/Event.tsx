@@ -192,7 +192,7 @@ export function Register({
       <Typography variant={bodyVariant} sx={{...textSX, ...mbSX}} textAlign="center">
         * Upon purchasing multiple tickets, please send an email to{' '}
         <b>
-          <a href="mailto:support@mynaot.org">support@mynaot.org </a>
+          <a href="mailto:mynaotops@gmail.com">mynaotops@gmail.com </a>
         </b>
         containing the names of all attendees.
       </Typography>
