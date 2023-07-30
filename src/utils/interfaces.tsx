@@ -1,9 +1,19 @@
 export interface SharedData {
+  title: {
+    lg: string;
+    sm: string;
+  }
   main: {
     history_title: string;
     history_body: string;
     statement_title: string;
     statement_body: string;
+    events_title: string;
+  }
+  contact: {
+    title: string,
+    body: string;
+    email: string;
   }
   fee: string;
   overview: {
@@ -47,6 +57,7 @@ export interface WorkshopItem {
   register: {
     title: string;
     body: string;
+    note: string;
     buy_id: string;
     buy_key: string;
   };

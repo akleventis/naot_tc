@@ -10,7 +10,8 @@
         "time": "8:00am - 5:00pm",
         "register": {
           "title": "Register",
-          "body": "* Registration ends 9/01/2023",
+          "body": "* Limited spots available, Registration ends 9/01/2023",
+          "note": "* Upon purchasing multiple tickets, please include all attendees' names in the provided text field during checkout.",
           "buy_id": "buy_btn_1NVmBND6jiafmpE315CiRmnF",
           "buy_key": "pk_live_51NFfY3D6jiafmpE3IofgdLP5CDut4cel9Z6kr8LBCJSQNfrfT1csdKYqJM5U715X67PJ41w93xH94z8WXi31HOih00mDF5rgTJ"
         },
@@ -34,7 +35,8 @@
         "time": "8:00am - 5:00pm",
         "register": {
           "title": "Register",
-          "body": "* Registration ends 10/06/2023",
+          "body": "* Limited spots available, Registration ends 10/06/2023",
+          "note": "* Upon purchasing multiple tickets, please include all attendees' names in the provided text field during checkout.",
           "buy_id": "buy_btn_1NVmSFD6jiafmpE3TEw0KA6q",
           "buy_key": "pk_live_51NFfY3D6jiafmpE3IofgdLP5CDut4cel9Z6kr8LBCJSQNfrfT1csdKYqJM5U715X67PJ41w93xH94z8WXi31HOih00mDF5rgTJ"
         },
@@ -58,7 +60,8 @@
         "time": "8:00am - 5:00pm",
         "register": {
           "title": "Register",
-          "body": "* Registration ends 10/20/2023",
+          "body": "* Limited spots available, Registration ends 10/20/2023",
+          "note": "* Upon purchasing multiple tickets, please include all attendees' names in the provided text field during checkout.",
           "buy_id": "buy_btn_1NVmReD6jiafmpE3gY3QMBIS",
           "buy_key": "pk_live_51NFfY3D6jiafmpE3IofgdLP5CDut4cel9Z6kr8LBCJSQNfrfT1csdKYqJM5U715X67PJ41w93xH94z8WXi31HOih00mDF5rgTJ"
         },
@@ -78,11 +81,21 @@
 
 
   "constants": {
+    "title": {
+      "lg": "National Association of Orthopaedic Technologists",
+      "sm": "NAOT"
+    },
     "main": {
       "history_title": "NAOT History",
       "history_body": "The National Association of Orthopaedic Technologists (NAOT) was established on August 29, 1982, in Boston, Massachusetts. It originated from the ideas of a few members of the National Federation of Orthopaedic Technologists, who had conceived the concept years before. Recognizing the strength in unity and the importance of setting standards, a dedicated group of orthopaedic technologists worked towards creating an independent organization. In 1981, they presented their vision to the Federation's membership in Dallas, Texas, which led to a decision to launch the new association during the 1982 convention. Representatives from regional, state, and local groups gathered in Boston to adopt the charter and by-laws for the national organization. With the election of officers and the establishment of the Executive Board, NAOT became a reality, and the parent Federation ceased to exist.",
       "statement_title": "Mission Statement",
-      "statement_body": "NAOT is a non-profit organization dedicated to the pursuit of excellence through education of orthopaedic technologists, and other related allied health care professionals, and the general public. NAOT believes that the profession of orthopaedic technology can only reach full potential and universal acceptance through widespread educational opportunities. Certification of all orthopaedic technologists underscores NAOT’s commitment to these professional goals."
+      "statement_body": "NAOT is a non-profit organization dedicated to the pursuit of excellence through education of orthopaedic technologists, and other related allied health care professionals, and the general public. NAOT believes that the profession of orthopaedic technology can only reach full potential and universal acceptance through widespread educational opportunities. Certification of all orthopaedic technologists underscores NAOT’s commitment to these professional goals.",
+      "events_title": "Upcoming Events"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "body": "Make sure to include your email address, name, and message body. We'll reach back as soon as possible.",
+      "email": "mynaotops@gmail.com"
     },
     "fee": "Registration Fee $90",
     "overview": {
@@ -125,7 +138,7 @@
     },
     "cancellation": {
       "title": "Cancellations",
-      "body": "Cancellations must be made in writing. Cancelations are permitted up to two weeks prior to workshop date, and are assessed a $25 processing fee. Refunds are not provided for cancellations within two weeks of the scheduled program. Substitutions are permitted at any time."
+      "body": "Cancellations must be made in writing. Cancellations are permitted up to two weeks prior to workshop date, and are assessed a $25 processing fee. Refunds are not provided for cancellations within two weeks of the scheduled program. Substitutions are permitted at any time."
     }
   }
 }

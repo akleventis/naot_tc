@@ -1,16 +1,16 @@
+import data from '@/data/data.json';
+import { SharedData } from '@/utils/interfaces';
 import { useRef } from 'react';
 import { Container, Typography, TextField, Button } from '@mui/material';
 import emailjs from '@emailjs/browser';
 
-const title = 'Contact Us';
-const body =
-  'Make sure to include your email address, name, and message body. We\'ll reach back as soon as possible.';
-const email = "mynaotops@gmail.com"
-
 
 function Contact() {
-  const formRef = useRef<HTMLFormElement>(null);
+  const sharedData: SharedData = data.constants;
+  const mailHref = `mailto:${sharedData.contact.email}`
 
+  const formRef = useRef<HTMLFormElement>(null);
+  
   const [public_key, service_id, template_id] = [
     process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY,
     process.env.NEXT_PUBLIC_EMAIL_SERVICE,
@@ -54,10 +54,10 @@ function Contact() {
       <Container sx={c1SX}>
         <div>
           <Typography variant='h5' sx={{ mb: '.5em' }}>
-            {title}
+            {sharedData.contact.title}
           </Typography>
           <Typography variant='body1' color='text.secondary' sx={{ mb: '.5em' }}>
-            {body}
+            {sharedData.contact.body}
           </Typography>
         </div>
         <form id='email-form' onSubmit={handleSendEmail} ref={formRef}>
@@ -97,8 +97,11 @@ function Contact() {
           </Container>
         </form>
         <Typography variant='body1' color='text.secondary' sx={{ mt: '.5em' }}>
-        emails sent to: <a style={{textDecoration: 'underline'}}href="mailto:mynaotops@gmail.com"><em>{email}</em></a>
-          </Typography>
+          emails are sent to:{' '}
+          <a style={{ textDecoration: 'underline' }} href={mailHref}>
+            <em>{sharedData.contact.email}</em>
+          </a>
+        </Typography>
       </Container>
     </main>
   );

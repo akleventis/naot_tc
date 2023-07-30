@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Container, Typography, Button, Box, Grid } from '@mui/material';
 import { TypographyProps } from '@mui/material/Typography';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
@@ -169,6 +168,7 @@ export function SplitList({
 export function Register({
   title,
   body,
+  note,
   titleVariant,
   bodyVariant,
   buttonID,
@@ -176,6 +176,7 @@ export function Register({
 }: {
   title: string;
   body: string;
+  note: string;
   titleVariant: TypographyProps['variant'];
   bodyVariant: TypographyProps['variant'];
   buttonID: string;
@@ -190,11 +191,7 @@ export function Register({
         <stripe-buy-button buy-button-id={buttonID} publishable-key={buttonKey} />
       </div>
       <Typography variant={bodyVariant} sx={{...textSX, ...mbSX}} textAlign="center">
-        * Upon purchasing multiple tickets, please send an email to{' '}
-        <b>
-          <a href="mailto:mynaotops@gmail.com">mynaotops@gmail.com </a>
-        </b>
-        containing the names of all attendees.
+        {note}
       </Typography>
       <Typography variant={bodyVariant} sx={textSX} textAlign="center" color="text.secondary">
         {body}

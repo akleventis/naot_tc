@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
 import logo from '../../public/logos/logo_fill.png';
+import data from '@/data/data.json';
+import { SharedData } from '@/utils/interfaces';
 import Image from 'next/image';
 import { AppBar, Box, Toolbar, Button, Container } from '@mui/material';
 
-const title = 'National Association of Orthopaedic Technologists';
-const contact = 'Contact';
-
 export default function Navbar() {
+  const sharedData: SharedData = data.constants;
   const router = useRouter();
 
   const routeContact = () => router.push('/contact');
@@ -31,14 +31,14 @@ export default function Navbar() {
       <AppBar sx={barSX}>
         <Container sx={containerSX}>
           <Toolbar>
-            <Image src={logo} alt="logo" style={imgSX} onClick={routeIndex} />
+            <Image src={logo} alt='logo' style={imgSX} onClick={routeIndex} />
             <Container sx={headerSX}>
               <Button sx={buttonSX} onClick={routeIndex}>
-                {title}
+                {sharedData.title.lg}
               </Button>
             </Container>
             <Button sx={buttonSX} onClick={routeContact}>
-              {contact}
+              Contact
             </Button>
           </Toolbar>
         </Container>

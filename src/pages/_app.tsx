@@ -2,6 +2,8 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material';
 import { useQueryParams } from '@/utils/useQueryParams';
+import data from '@/data/data.json';
+import { SharedData } from '@/utils/interfaces';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Container from '@mui/material/Container';
@@ -57,10 +59,8 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-const title = 'NAOT';
-const content = 'National Association of Orthopedic Technicians';
-
 export default function App({ Component, pageProps }: AppProps) {
+  const sharedData: SharedData = data.constants
   const { showModal, setShowModal, clearQueryParams } = useQueryParams();
 
   const handleClose = () => {
@@ -76,9 +76,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <meta name='description' content={content} />
+        <meta name='description' content={sharedData.title.sm} />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <title>{title}</title>
+        <meta name="description" content="National Association of Orthopaedic Technologists" />
+        <meta name="keywords" content="NAOT, Casting, Workshop, Orthopedic, Orthopaedic, Skills Workshop, National Association of Orthopaedic Technologists, AOTC, Ortho" />
+        <title>{sharedData.title.sm}</title>
       </Head>
       <ThemeProvider theme={theme}>
         <SuccessModal show={showModal} handleClose={handleClose} />
