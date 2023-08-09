@@ -24,8 +24,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-.env*.local
+# env files
+*.env*
 
 # script env variables
 /scripts/.env
@@ -40,3 +40,6 @@ next-env.d.ts
 notes.txt
 # Local Netlify folder
 .netlify
+
+/scripts/emails/email_list
+safe_emails*

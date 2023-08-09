@@ -17,7 +17,7 @@ switch (options['env']) {
     stripe_key = process.env.STRIPE_KEY_DEV;
     break
   case 'prod':
-    stripe_key = process.env.STRIPE_KEY_PROD
+    stripe_key = process.env.STRIPE_KEY_PROD;
     break
 }
 
