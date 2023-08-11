@@ -78,8 +78,6 @@
       }
     ]
   },
-
-
   "constants": {
     "title": {
       "lg": "National Association of Orthopaedic Technologists",
@@ -125,7 +123,13 @@
     },
     "certs": {
       "title": "CEU/CME's (8.5 credit hours available)",
-      "items": ["OTC", "OPA-C/OA-C", "ATC", "PA-C", "BOC"]
+      "items": [
+        "OTC",
+        "OPA-C/OA-C",
+        "ATC",
+        "PA-C",
+        "BOC"
+      ]
     },
     "faculty": {
       "title": "Faculty",
@@ -140,5 +144,26 @@
       "title": "Cancellations",
       "body": "Cancellations must be made in writing. Cancellations are permitted up to two weeks prior to workshop date, and are assessed a $25 processing fee. Refunds are not provided for cancellations within two weeks of the scheduled program. Substitutions are permitted at any time."
     }
+  },
+
+  "board_members": {
+    "title": "Board Members",
+    "members": [
+      {
+        "name": "Erik Duke",
+        "title": "President",
+        "email": "mynaotpresident@gmail.com"
+      },
+      {
+        "name": "Chris Leventis",
+        "title": "Executive Director",
+        "email": "chris.leventis@orthoplusonline.com"
+      },
+      {
+        "name": "Katherine Bagnato",
+        "title": "Secretary",
+        "email": ""
+      }
+    ]
   }
 }

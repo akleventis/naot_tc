@@ -47,6 +47,17 @@ export interface SharedData {
   };
 }
 
+export interface BoardMember {
+  name: string;
+  title: string;
+  email: string;
+}
+
+export interface BoardMembers {
+  title: string,
+  members: BoardMember[];
+}
+
 export interface WorkshopItem {
   title: string;
   heading: string;
