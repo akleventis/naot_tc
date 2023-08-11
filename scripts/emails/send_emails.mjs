@@ -55,6 +55,7 @@ const main = async () => {
         From: fromAddress,
         To: email,
         TemplateId: templateID,
+        MessageStream: streamID,
         TemplateModel: {},
       }));
 
@@ -65,14 +66,14 @@ const main = async () => {
 
       console.log(requestData)
     //  Make the POST request using axios
-    //   axios.post(apiUrl, requestData, { headers })
-    //     .then((response) => {
-    //       console.log("Batch request successful:", response.data);
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error making batch request:", error);
-    //     });
-    //   console.log(messages);
+      axios.post(apiUrl, requestData, { headers })
+        .then((response) => {
+          console.log("Batch request successful:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error making batch request:", error);
+        });
+      console.log(messages);
     });
 };
 
