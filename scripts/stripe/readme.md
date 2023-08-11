@@ -2,8 +2,8 @@
 
 Run
 ---
-1. `cd /scripts`
-2. `node export.mjs --env={environment}`
+1. `cd /scripts/stripe`
+2. `node stripe_export.mjs --env={environment}`
     - `dev` or `prod`
 
 Data Structure

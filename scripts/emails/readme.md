@@ -11,10 +11,15 @@ Run
 1. `cd /scripts/emails`
 2. `node batch_csv.mjs`
 
-### email_marketing.mjs
+### send_emails.mjs
  - Facilitates sending batches of emails using the Postmark API
  - It reads email addresses from a CSV file, processes them, and sends templated emails to the specified recipients
    - See: https://api.postmarkapp.com/email/batchWithTemplates
+
+Run
+---
+1. `cd /scripts/emails`
+2. `node send_emails.mjs --batch={batch.csv}`
 
 ```bash
 curl "https://api.postmarkapp.com/email/batchWithTemplates" \
