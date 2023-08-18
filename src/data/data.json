@@ -42,13 +42,13 @@
         },
         "venue": {
           "title": "Venue",
-          "iframe_url": "",
-          "maps_url": ""
+          "iframe_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.813834424305!2d-90.32180252396623!3d38.72208295702936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87df35c26c566c55%3A0xcf1fff2249c7a041!2sHilton%20Garden%20Inn%20St.%20Louis%20Airport!5e0!3m2!1sen!2sus!4v1692395328492!5m2!1sen!2sus",
+          "maps_url": "https://goo.gl/maps/ye5RKCXZ524uasST6"
         },
         "address": {
-          "name": "TBD",
-          "street": "",
-          "city_state_zip": ""
+          "name": "Hilton Garden Inn St. Louis Airport",
+          "street": "4450 Evans Pl",
+          "city_state_zip": "St. Louis, MO 63134"
         }
       },
       {
