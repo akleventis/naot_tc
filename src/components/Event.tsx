@@ -193,9 +193,10 @@ export function Register({
       <Typography variant={bodyVariant} sx={{...textSX, ...mbSX}} textAlign="center">
         {note}
       </Typography>
-      <Typography variant={bodyVariant} sx={textSX} textAlign="center" color="text.secondary">
+      {/* TODO: Uncomment for deadline */}
+      {/* <Typography variant={bodyVariant} sx={textSX} textAlign="center" color="text.secondary">
         {body}
-      </Typography>
+      </Typography> */}
     </Container>
   );
 }
