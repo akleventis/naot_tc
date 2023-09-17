@@ -42,4 +42,6 @@ notes.txt
 .netlify
 
 /scripts/emails/email_list
-safe_emails*
+
+
+*.csv
