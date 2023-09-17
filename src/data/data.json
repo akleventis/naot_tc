@@ -2,31 +2,6 @@
   "events": {
     "items": [
       {
-        "title": "chicago",
-        "heading": "Casting & Splinting Skills Workshop in Chicago, IL",
-        "img": "chicago.png",
-        "location": "Chicago, IL",
-        "date": "Sat Sept. 16th, 2023",
-        "time": "8:00am - 5:00pm",
-        "register": {
-          "title": "Register",
-          "body": "* Limited spots available, Registration ends 9/05/2023",
-          "note": "* Upon purchasing multiple tickets, please include all attendees' names in the provided text field during checkout.",
-          "buy_id": "buy_btn_1NVmBND6jiafmpE315CiRmnF",
-          "buy_key": "pk_live_51NFfY3D6jiafmpE3IofgdLP5CDut4cel9Z6kr8LBCJSQNfrfT1csdKYqJM5U715X67PJ41w93xH94z8WXi31HOih00mDF5rgTJ"
-        },
-        "venue": {
-          "title": "Venue",
-          "iframe_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.5384532028543!2d-87.88773739999999!3d42.010180000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb6508d13fa6f%3A0xbc94cfb8ed372f41!2sWyndham%20Chicago%20O&#39;Hare!5e0!3m2!1sen!2sus!4v1689817589185!5m2!1sen!2sus",
-          "maps_url": "https://goo.gl/maps/ESu6n1FyKzxikRbs5"
-        },
-        "address": {
-          "name": "Wyndham Chicago O'Hare",
-          "street": "1450 E. Touhy Avenue",
-          "city_state_zip": "Des Plaines, IL 60018"
-        }
-      },
-      {
         "title": "st_louis",
         "heading": "Casting & Splinting Skills Workshop in St. Louis, MO",
         "img": "st_louis.png",

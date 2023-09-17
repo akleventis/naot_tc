@@ -4,12 +4,22 @@ import fs from "fs";
 import csv from "csv-parser";
 import axios from "axios";
 
+const [
+  t_marketingV1,
+  t_marketingV2
+] = [
+  process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V1,
+  process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V2
+]
+
 // Load environment variables from .env.local file
 dotenv.config();
 
 const options = commandLineArgs([
-  {name: 'batch', type: String}
+  {name: 'batch', type: String},
+  {name: 'template', type: String}
 ])
+
 let csvBatch = options['batch']
 if (csvBatch === undefined) {
   console.error('Fatal Error:', 'must provide --file arg');
@@ -19,7 +29,7 @@ if (csvBatch === undefined) {
 const fromAddress = process.env.POSTMARK_DEFAULT_FROM;
 const serverKey = process.env.POSTMARK_BROADCAST_KEY;
 const streamID = process.env.POSTMARK_BROADCAST_STREAM_ID;
-const templateID = process.env.POSTMARK_BROADCAST_TEMPLATE_ID;
+const templateID = process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V2;
 if (fromAddress === undefined) {
   console.error('Fatal Error:', 'error processing .env file')
 }
