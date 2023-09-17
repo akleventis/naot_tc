@@ -9,16 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aternus/csv-to-xlsx": "^2.1.2",
     "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.6",
-    "@types/node": "^20.4.0",
     "@types/react": "18.2.8",
     "axios": "^1.4.0",
     "command-line-args": "^5.2.1",
     "csv-parser": "^3.0.0",
+    "depcheck": "^1.4.6",
     "dotenv": "^16.3.1",
     "next": "13.4.4",
     "react": "18.2.0",

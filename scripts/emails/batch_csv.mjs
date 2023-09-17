@@ -3,7 +3,7 @@ import fs from "fs";
 import csv from "csv-parser";
 
 
-const batch_size = 50;
+const batch_size = 500;
 const batchDirectory = 'email_list'; // Directory to store batch files
 
 if (!fs.existsSync(batchDirectory)) {
