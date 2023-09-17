@@ -8,8 +8,8 @@ function SuccessModal({
   handleClose: () => void;
 }) {
   const theme = useTheme()
-  const title = 'Success!';
-  const body = 'A payment to SKILLS WORKSHOP has been processed and will appear on your statement. Keep an eye on your email for further details.';
+  const title = 'Thank you!';
+  const body = 'A payment to SKILLS WORKSHOP is being processed and will appear on your statement. Keep an eye on your email for further details.';
 
   const modalSX = {
     position: 'absolute' as 'absolute',
