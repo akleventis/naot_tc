@@ -10,6 +10,7 @@ dotenv.config();
 const requiredVars = [
   'POSTMARK_BROADCAST_TEMPLATE_ID_V1',
   'POSTMARK_BROADCAST_TEMPLATE_ID_V2',
+  'POSTMARK_BROADCAST_TEMPLATE_ID_V3',
   'POSTMARK_DEFAULT_FROM',
   'POSTMARK_BROADCAST_KEY',
   'POSTMARK_BROADCAST_STREAM_ID',
@@ -27,7 +28,8 @@ const [
 
 const templateMapping = {
   'template_v1': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V1,
-  'template_v2': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V2
+  'template_v2': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V2,
+  'template_v3': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V3
 }
 
 const options = commandLineArgs([
