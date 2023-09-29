@@ -5,7 +5,6 @@ import fs from "fs";
 import path from "path";
 import csvToXlsx from '@aternus/csv-to-xlsx';
 
-// node export.mjs --env={environment}
 const api_version = '2022-11-15';
 const csvFile = 'registration.csv';
 const excelFile = 'registration.xlsx';

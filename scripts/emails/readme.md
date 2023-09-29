@@ -19,8 +19,11 @@ Run
 Run
 ---
 1. `cd /scripts/emails`
-2. `node send_emails.mjs --batch={batch.csv}`
+2. `node batch_csv.mjs --batch={batch} --template={template}`
+  - batch ex. `batch_0.csv`
+  - template ex. `template_v1.csv`
 
+Request Format:
 ```bash
 curl "https://api.postmarkapp.com/email/batchWithTemplates" \
   -X POST \
