@@ -39,6 +39,7 @@ const options = commandLineArgs([
 
 const main = async () => {
   validateEnvVariables(requiredVars)
+
   const [csvBatch, templateID] = processArgs(options)
 
   const emailsCSV = `./email_list/${csvBatch}.csv`;
@@ -61,21 +62,9 @@ const main = async () => {
       emailArray.push(...emails);
     })
     .on("end", () => {
-      // Prepare the array of messages
-      const messages = emailArray.map((email) => ({
-        From: fromAddress,
-        To: email,
-        TemplateId: templateID,
-        MessageStream: streamID,
-        TemplateModel: {},
-      }));
-    
-      // Create the data object for the request
-      const requestData = {
-        Messages: messages,
-      };
+      const requestData = formatRequest(emailArray, templateID)
 
-      //  Make the POST request 
+      //  Perform POST request against https://api.postmarkapp.com/email/batchWithTemplates
       axios.post(apiUrl, requestData, { headers })
         .then((response) => {
           console.log("Batch request successful:", response.data);
@@ -87,6 +76,7 @@ const main = async () => {
     });
 };
 
+// validateEnvVariables makes sure all environment variables are present before proceeding into the script
 const validateEnvVariables = (requiredVars) => {
   const missingVars = requiredVars.filter((variable) => !process.env[variable]);
   if (missingVars.length > 0) {
@@ -95,6 +85,9 @@ const validateEnvVariables = (requiredVars) => {
   }
 }
 
+// processArgs reads and processes command line arguments for script.
+// 1. batch: File to process (ex. batch_0.csv)
+// 2. template: Email template name (ex. template_v1)
 const processArgs = (options) => {
   let csvBatch = options['batch']
   if (csvBatch === undefined) {
@@ -114,6 +107,24 @@ const processArgs = (options) => {
     process.exit(1);
   }
   return [csvBatch, templateID]
+}
+
+// formatRequest converts the array of emails into a formatted batch request.
+// See: https://api.postmarkapp.com/email/batchWithTemplates
+const formatRequest = (emailArray, templateID) => {
+  const messages = emailArray.map((email) => ({
+    From: fromAddress,
+    To: email,
+    TemplateId: templateID,
+    MessageStream: streamID,
+    TemplateModel: {},
+  }));
+
+  const requestData = {
+    Messages: messages,
+  };
+
+  return requestData
 }
 
 main();
