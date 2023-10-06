@@ -69,7 +69,7 @@ export default function Event() {
           listItems={sharedData.certs.items}
           titleVariant='h6'
           listItemsVariant='body1'
-          chunkSize={3}
+          chunkSize={2}
         />
         <ParagraphBlock
           title={sharedData.faculty.title}
