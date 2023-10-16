@@ -194,9 +194,9 @@ export function Register({
         {note}
       </Typography>
       {/* TODO: Uncomment for deadline */}
-      {/* <Typography variant={bodyVariant} sx={textSX} textAlign="center" color="text.secondary">
+      <Typography variant={bodyVariant} sx={textSX} textAlign="center" color="text.secondary">
         {body}
-      </Typography> */}
+      </Typography>
     </Container>
   );
 }

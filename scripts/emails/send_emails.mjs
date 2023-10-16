@@ -11,6 +11,8 @@ const requiredVars = [
   'POSTMARK_BROADCAST_TEMPLATE_ID_V1',
   'POSTMARK_BROADCAST_TEMPLATE_ID_V2',
   'POSTMARK_BROADCAST_TEMPLATE_ID_V3',
+  'POSTMARK_BROADCAST_TEMPLATE_ID_V4',
+  'POSTMARK_BROADCAST_TEMPLATE_ID_V5',
   'POSTMARK_DEFAULT_FROM',
   'POSTMARK_BROADCAST_KEY',
   'POSTMARK_BROADCAST_STREAM_ID',
@@ -29,7 +31,9 @@ const [
 const templateMapping = {
   'template_v1': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V1,
   'template_v2': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V2,
-  'template_v3': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V3
+  'template_v3': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V3,
+  'template_v4': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V4,
+  'template_v5': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V5
 }
 
 const options = commandLineArgs([
@@ -72,7 +76,6 @@ const main = async () => {
         .catch((error) => {
           console.error("Error making batch request:", error);
         });
-      console.log(messages);
     });
 };
 
