@@ -19,9 +19,9 @@ Run
 Run
 ---
 1. `cd /scripts/emails`
-2. `node batch_csv.mjs --batch={batch} --template={template}`
-  - batch ex. `batch_0.csv`
-  - template ex. `template_v1.csv`
+2. `node send_emails.mjs --batch={batch} --template={template}`
+  - batch ex. `batch_0`
+  - template ex. `template_v1`
 
 Request Format:
 ```bash
