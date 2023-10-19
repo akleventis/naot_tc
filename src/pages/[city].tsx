@@ -86,6 +86,7 @@ export default function Event() {
           bodyVariant='body2'
           buttonID={workshopItem.register.buy_id}
           buttonKey={workshopItem.register.buy_key}
+          location={workshopItem.location}
         />
         <Location
           title={workshopItem.venue.title}

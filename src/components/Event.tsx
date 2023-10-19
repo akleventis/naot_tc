@@ -173,6 +173,7 @@ export function Register({
   bodyVariant,
   buttonID,
   buttonKey,
+  location,
 }: {
   title: string;
   body: string;
@@ -181,22 +182,31 @@ export function Register({
   bodyVariant: TypographyProps['variant'];
   buttonID: string;
   buttonKey: string;
+  location: string;
 }) {
   return (
     <Container sx={mbSX}>
       <Typography variant={titleVariant} id="register" sx={{ ...mbSX, ...textSX }}>
         {title}
       </Typography>
-      <div style={flexCenterSX}>
-        <stripe-buy-button buy-button-id={buttonID} publishable-key={buttonKey} />
-      </div>
-      <Typography variant={bodyVariant} sx={{...textSX, ...mbSX}} textAlign="center">
-        {note}
-      </Typography>
-      {/* TODO: Uncomment for deadline */}
-      <Typography variant={bodyVariant} sx={textSX} textAlign="center" color="text.secondary">
-        {body}
-      </Typography>
+      {buttonID == '' ? (
+        <Typography variant={bodyVariant} sx={{ ...textSX, ...mbSX }} textAlign="center">
+          Registration for {location} has closed
+        </Typography>
+      ) : (
+        <>
+          <div style={flexCenterSX}>
+            <stripe-buy-button buy-button-id={buttonID} publishable-key={buttonKey} />
+          </div>
+          <Typography variant={bodyVariant} sx={{ ...textSX, ...mbSX }} textAlign="center">
+            {note}
+          </Typography>
+          {/* TODO: Uncomment for deadline */}
+          <Typography variant={bodyVariant} sx={textSX} textAlign="center" color="text.secondary">
+            {body}
+          </Typography>
+        </>
+      )}
     </Container>
   );
 }
