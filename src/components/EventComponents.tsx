@@ -118,6 +118,7 @@ export function StandardList({
     </Container>
   );
 }
+
 export function SplitList({
   title,
   listItems,
@@ -278,6 +279,119 @@ export function Sponsor({
           <img height="45" src={`${sponsorPath}/${imgSrc}`} />
         </a>
       </div>
+    </Container>
+  );
+}
+
+// Custom hotel information for atlanta
+export function AtlantaHotelInformation() {
+  const titleVariant = 'h6';
+  const bodyVariant = 'body1';
+  const mtSX = { marginTop: '.5em' };
+  const aSX = { color: '#357ab1', textDecoration: 'underline' };
+  const fSX = { fontSize: "90%"}
+  return (
+    <Container sx={mbSX}>
+      <Typography variant={titleVariant} sx={{ ...mbSX, ...textSX}}>
+        Hotel Information
+      </Typography>
+      <ol style={{ paddingLeft: '15px'}}>
+        <li>
+          <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+            Click on the following online booking link:{' '}
+            <a style={aSX} href="https://www.ihg.com/holidayinn/hotels/us/en/atlanta/atlap/hoteldetail?fromRedirect=true&qSrt=sBR&qIta=99801505&icdv=99801505&qSlH=ATLAP&qGrpCd=NC4&setPMCookies=true&qSHBrC=HI&qDest=1380%20Virginia%20Avenue%2C%20Atlanta%2C%20GA%2C%20US&srb_u=1">
+              Online Booking Link
+            </a>{' '}
+            This link will take you directly to their website with the NAOT Casting Workshop code
+            already attached.
+          </Typography>
+        </li>
+        <li>
+          <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+            Enter your Arrival and Departure Date and press Enter.
+          </Typography>
+        </li>
+        <li>
+          <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+            Select your preferred Bed Type to make your reservation.
+          </Typography>
+        </li>
+      </ol>
+
+      <br />
+
+      <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+        For those who prefer to make reservations over the phone, you can call their toll-free
+        reservations department at <a style={aSX} href="tel:1-855-862-4908">1-855-862-4908</a>. Be sure to
+        mention the NAOT Casting Workshop or provide the Group Code NC4 when making your
+        reservation.
+      </Typography>
+
+
+      <ul style={{ paddingLeft: '15px' }}>
+        <li style={mtSX}>
+          <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+            Cut Off for Reservations: October 27, 2023.
+          </Typography>
+        </li>
+        <li>
+          <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+            Room Rates:
+          </Typography>
+          <ul style={{ paddingLeft: '20px' }}>
+            <li style={{...mtSX, ...fSX}}>
+              $119.00 + tax per room, per night for a Standard Room with One King Bed or Two Double
+              Beds
+            </li>
+            <li style={{...mtSX, ...fSX}}>
+              $149.00 + tax per room, per night for a One Bedroom Suite with One King Bed or Two
+              Double Beds
+            </li>
+          </ul>
+        </li>
+        <li style={mtSX}>
+          <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+            Self-Parking: $5.00 per room, per night for all overnight guests.
+          </Typography>
+        </li>
+        <li>
+          <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+            The on-site Restaurant & Bar is open daily from 6 AM to 11 PM, serving Breakfast, Lunch,
+            and Dinner.
+          </Typography>
+        </li>
+        <li>
+          <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+            Cancellation Policy: If you need to cancel or change your reservation, please do so 24
+            hours prior to your date of Arrival.
+          </Typography>
+        </li>
+      </ul>
+
+      <br />
+
+      <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+        If you have any questions or require special accommodations when making your reservations,
+        please do not hesitate to contact the hotel directly at{' '}
+        <a style={aSX} href="tel:404-669-1203">404-669-1203</a> or via email at{' '}
+        <a style={aSX} href="mailto:venita.gorham@hiatlantaairport.com">venita.gorham@hiatlantaairport.com</a>.
+      </Typography>
+
+      <br />
+
+      <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+        For your convenience, the hotel offers a complimentary 24-hour shuttle service to and from
+        the ATL (Hartsfield Jackson Airport) Domestic Terminal only, departing every 30 minutes.
+        Look for our shuttle marked "HOLIDAY INN & SUITES ATLANTA AIRPORT NORTH" in the Ground
+        Transportation / Hotel Shuttle area after collecting your luggage.
+      </Typography>
+
+      <br />
+
+      <Typography variant={bodyVariant} sx={{...textSX, ...fSX}}>
+        For those traveling to or from the International Terminal, you must take the Airport TRAM to
+        the Domestic Side of the Airport to access our hotel shuttle.
+      </Typography>
     </Container>
   );
 }

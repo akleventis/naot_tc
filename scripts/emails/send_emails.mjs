@@ -13,6 +13,7 @@ const requiredVars = [
   'POSTMARK_BROADCAST_TEMPLATE_ID_V3',
   'POSTMARK_BROADCAST_TEMPLATE_ID_V4',
   'POSTMARK_BROADCAST_TEMPLATE_ID_V5',
+  'POSTMARK_BROADCAST_TEMPLATE_ID_V6',
   'POSTMARK_DEFAULT_FROM',
   'POSTMARK_BROADCAST_KEY',
   'POSTMARK_BROADCAST_STREAM_ID',
@@ -33,7 +34,8 @@ const templateMapping = {
   'template_v2': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V2,
   'template_v3': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V3,
   'template_v4': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V4,
-  'template_v5': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V5
+  'template_v5': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V5,
+  'template_v6': process.env.POSTMARK_BROADCAST_TEMPLATE_ID_V6,
 }
 
 const options = commandLineArgs([

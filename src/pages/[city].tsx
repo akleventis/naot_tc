@@ -11,7 +11,8 @@ import {
   Register,
   Location,
   Sponsor,
-} from '@/components/Event';
+  AtlantaHotelInformation,
+} from '@/components/EventComponents';
 
 export default function Event() {
   const workshopData: WorkshopData = data.events;
@@ -98,6 +99,7 @@ export default function Event() {
           addressStreet={workshopItem.address.street}
           addressCityStateZip={workshopItem.address.city_state_zip}
         />
+        {workshopItem.title === "atlanta" ? <AtlantaHotelInformation />: <></>}
         <Sponsor
           title={sharedData.sponsor.title}
           titleVariant='h6'
