@@ -1,6 +1,6 @@
 import data from '@/data/data.json';
 import { WorkshopData, SharedData } from '@/utils/interfaces';
-import { ParagraphBlock } from '@/components/Event';
+import { ParagraphBlock } from '@/components/EventComponents';
 import Grid from '@mui/material/Grid';
 import MeetingCard from '@/components/MeetingCard';
 
