@@ -80,6 +80,7 @@ export default function Event() {
           color='text.primary'
         />
         <Register
+          isLive={workshopItem.isLive}
           title={workshopItem.register.title}
           body={workshopItem.register.body}
           note={workshopItem.register.note}
