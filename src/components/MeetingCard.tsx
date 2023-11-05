@@ -9,6 +9,7 @@ import PaymentIcon from '@mui/icons-material/Payment';
 
 const imgPath = `/events`;
 
+
 export default function MeetingCard({
   data,
   sharedData,
@@ -22,6 +23,14 @@ export default function MeetingCard({
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
   };
 
+  const greyOutImgSX = {
+    WebkitFilter: 'grayscale(100%)',
+    MozFilter: 'grayscale(100%)',
+    OFilter: 'grayscale(100%)',
+    MsFilter: 'grayscale(100%)',
+    filter: 'grayscale(100%)'
+  };
+
   return (
     <Link href={{ pathname: `${data.title}` }}>
       <Card sx={cardSx}>
@@ -31,6 +40,7 @@ export default function MeetingCard({
             height='110'
             image={`${imgPath}/${data.img}`}
             alt={data.title}
+            sx={data.isLive ? {} : greyOutImgSX}
           />
           <CardContent className='p-2'>
             <Typography gutterBottom variant='body1'>
@@ -50,7 +60,7 @@ export default function MeetingCard({
             </Typography>
             <Typography variant='body2' color='text.secondary'>
               <PaymentIcon />
-              {data.register.buy_id === '' ? <>Registration closed</> : <>{sharedData.fee}</>}
+              {data.isLive ? <>{sharedData.fee}</> : <>Registration closed</>}
             </Typography>
           </CardContent>
         </CardActionArea>

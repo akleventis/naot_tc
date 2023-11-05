@@ -167,6 +167,7 @@ export function SplitList({
   );
 }
 export function Register({
+  isLive,
   title,
   body,
   note,
@@ -176,6 +177,7 @@ export function Register({
   buttonKey,
   location,
 }: {
+  isLive: boolean;
   title: string;
   body: string;
   note: string;
@@ -190,11 +192,7 @@ export function Register({
       <Typography variant={titleVariant} id="register" sx={{ ...mbSX, ...textSX }}>
         {title}
       </Typography>
-      {buttonID == '' ? (
-        <Typography variant={bodyVariant} sx={{ ...textSX, ...mbSX }} textAlign="center">
-          Registration for {location} has closed
-        </Typography>
-      ) : (
+      {isLive ? (
         <>
           <div style={flexCenterSX}>
             <stripe-buy-button buy-button-id={buttonID} publishable-key={buttonKey} />
@@ -207,6 +205,10 @@ export function Register({
             {body}
           </Typography>
         </>
+      ) : (
+        <Typography variant={bodyVariant} sx={{ ...textSX, ...mbSX }} textAlign="center">
+        Registration for {location} has closed
+      </Typography>
       )}
     </Container>
   );

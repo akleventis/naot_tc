@@ -101,9 +101,7 @@
         "items": [
           "OTC",
           "OPA-C/OA-C",
-          "ATC",
-          "PA-C",
-          "BOC"
+          "PA-C"
         ]
       },
       "faculty": {

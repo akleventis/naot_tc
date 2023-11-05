@@ -9,6 +9,7 @@ export interface SharedData {
     statement_title: string;
     statement_body: string;
     events_title: string;
+    past_events_title: string;
   }
   contact: {
     title: string,
@@ -59,6 +60,7 @@ export interface BoardMembers {
 }
 
 export interface WorkshopItem {
+  isLive: boolean;
   title: string;
   heading: string;
   img: string;
