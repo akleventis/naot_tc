@@ -15,7 +15,6 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.6",
     "@types/react": "18.2.8",
-    "axios": "^1.15.0",
     "command-line-args": "^5.2.1",
     "csv-parser": "^3.0.0",
     "depcheck": "^1.4.6",
