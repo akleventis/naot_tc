@@ -45,3 +45,5 @@ notes.txt
 
 
 *.csv
+# 1Password references only, safe to commit
+!.env.tpl
